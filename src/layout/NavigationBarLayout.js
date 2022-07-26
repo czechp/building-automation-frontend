@@ -1,15 +1,18 @@
 import styled from "styled-components";
 import SeparatorCmp from "../component/SeparatorCmp";
 import ButtonCmp from "../component/ButtonCmp";
+import {useNavigate} from "react-router-dom";
 
 const NavigationBarLayout = () => {
+    const navigate = useNavigate();
+
     return <>
         <Container>
-            <ButtonCmp width={20} label={"Locations"} />
-            <ButtonCmp width={20} label={"Devices"} />
-            <ButtonCmp width={20} label={"Account"} />
+            <ButtonCmp width={20} label={"Locations"} onClick={() => navigate("/")}/>
+            <ButtonCmp width={20} label={"Devices"}/>
+            <ButtonCmp width={20} label={"Account"}/>
         </Container>
-        <SeparatorCmp />
+        <SeparatorCmp/>
     </>
 }
 
