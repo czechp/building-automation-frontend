@@ -5,7 +5,8 @@ const SeparatorCmp = () => {
 }
 
 const Separator = styled.hr`
-    color: ${({theme})=>theme.colors.primary};
+  color: ${({theme}) => theme.colors.primary};
+  background-color: ${({theme}) => theme.colors.primary};
 `
 
 export default SeparatorCmp;

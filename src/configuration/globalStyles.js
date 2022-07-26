@@ -5,6 +5,7 @@ const GlobalStyles = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:wght@600&display=swap');
     font-size: 22px;
     color: ${({theme}) => theme.colors.primary};
+    background-color: ${({theme}) => theme.colors.faded};
     margin-right: 1%;
     margin-left: 1%;
     width: auto;

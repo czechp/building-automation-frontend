@@ -1,10 +1,11 @@
 const  colors = {
-    primary: "#0275d8",
+    primary: "#2a349b",
+    secondary: "#4753e5",
     success: "#5cb85c",
     info: "#5bc0de",
     warning: "#f0ad4e",
     danger: "#d9534f",
-    faded: "#f7f7f7",
+    faded: "#eae5e5",
     black: "black",
     white: "white"
 }
