@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const TextInputCmp = ({label, value, onChange, minLength}) => {
+const TextInputCmp = ({label, placeholder="", value, onChange, minLength, type="text"}) => {
     const showMinLength = minLength && value.length < minLength;
 
     function textOnChange(event) {
@@ -9,7 +9,7 @@ const TextInputCmp = ({label, value, onChange, minLength}) => {
 
     return <Container>
         <Label>{label}</Label>
-        <TextInput value={value} onChange={(event) => textOnChange(event)}/>
+        <TextInput type={type} placeholder={placeholder} value={value} onChange={(event) => textOnChange(event)}/>
         {showMinLength && <Warning>Text has to have minimum {minLength} characters</Warning>}
     </Container>
 }
@@ -22,10 +22,11 @@ const Label = styled.h4``
 
 const Warning = styled.h6`
   margin-top: 10px;
+  margin-bottom: 0;
   color: ${({theme}) => theme.colors.danger}
 `
 
-const TextInput = styled.input.attrs({type: "text"})`
+const TextInput = styled.input`
   border: none;
   border-bottom: ${({theme}) => `1px solid ${theme.colors.primary}`};
   height: 30px;
