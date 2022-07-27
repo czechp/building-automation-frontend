@@ -1,17 +1,17 @@
 import styled from "styled-components";
-import {useContext, useEffect, useState} from "react";
-
-import {StatementContext} from "./PageCmp";
-import colors from "../configuration/colors";
+import React from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleCheck, faCircleExclamation} from "@fortawesome/free-solid-svg-icons";
 
+import {StatementContext} from "./PageCmp";
+import colors from "../configuration/colors";
+
 const StatementCmp = () => {
     const VISIBILITY_DURATION_MILLISECONDS = 5000;
-    const {text, error} = useContext(StatementContext);
-    const [visibility, setVisibility] = useState(false);
+    const {text, error} = React.useContext(StatementContext);
+    const [visibility, setVisibility] = React.useState(false);
     const color = error ? colors.danger : colors.success;
-    const icon = error ? faCircleExclamation: faCircleCheck;
+    const icon = error ? faCircleExclamation : faCircleCheck;
 
     const showStatementIfExists = function () {
         if (text) {
@@ -20,7 +20,7 @@ const StatementCmp = () => {
         }
     }
 
-    useEffect(showStatementIfExists, [text]);
+    React.useEffect(showStatementIfExists, [text]);
 
     return <>
         {visibility && <Container color={color}>

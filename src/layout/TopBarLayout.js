@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import SeparatorCmp from "../component/SeparatorCmp";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHouseSignal} from "@fortawesome/free-solid-svg-icons";
+
+import SeparatorCmp from "../component/SeparatorCmp";
 
 const TopBarLayout = () => {
     return <>

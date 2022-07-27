@@ -1,13 +1,14 @@
 import styled from "styled-components";
+import React from "react";
+
 
 import colors from "../configuration/colors";
 import StatementCmp from "./StatementCmp";
-import {createContext, useState} from "react";
 
-export const StatementContext = createContext({});
+export const StatementContext = React.createContext({});
 
 const PageCmp = ({title, children}) => {
-    const [statement, setStatement] = useState({text: "", error: false});
+    const [statement, setStatement] = React.useState({text: "", error: false});
 
     const setErrorStatement = (text) => {
         setStatement({text, error: true});
