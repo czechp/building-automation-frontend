@@ -11,7 +11,7 @@ const LoginPage = () => {
     const [password, setPassword] = React.useState("");
 
     return <PageCmp title="Login">
-        <FormCmp title="Login">
+        <FormCmp>
             <TextInputCmp placeholder="Type your login" label="Username:" value={login} onChange={setLogin}
                           minLength={3}/>
             <TextInputCmp type="password" placeholder="Type your password" label="Password:" value={password}

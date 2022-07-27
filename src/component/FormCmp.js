@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const FormCmp = ({title, children})=>{
     return <Container>
-        <Header>{title}</Header>
+        {title && <Header>{title}</Header>}
         {children}
     </Container>
 }
