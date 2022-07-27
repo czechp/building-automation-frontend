@@ -16,6 +16,7 @@ const TextInputCmp = ({label, placeholder="", value, onChange, minLength, type="
 
 const Container = styled.div`
   width: 100%;
+  margin-bottom: 10px;
 `
 
 const Label = styled.h4``
