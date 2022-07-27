@@ -34,9 +34,13 @@ const PageCmp = ({title, children}) => {
 
 const Container = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 const Title = styled.h2`
+    align-self: flex-start;
 `
 
 const Content = styled.div`
