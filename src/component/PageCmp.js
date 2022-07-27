@@ -41,10 +41,11 @@ const Container = styled.div`
 
 const Title = styled.h2`
     align-self: flex-start;
+    margin-bottom: 0px;
 `
 
 const Content = styled.div`
-  margin-top: 150px;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   width: 60%;
