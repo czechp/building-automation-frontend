@@ -3,7 +3,6 @@ import styled from "styled-components";
 import colors from "../configuration/colors";
 import StatementCmp from "./StatementCmp";
 import {createContext, useState} from "react";
-import ButtonCmp from "./ButtonCmp";
 
 export const StatementContext = createContext({});
 

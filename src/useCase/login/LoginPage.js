@@ -1,5 +1,7 @@
+import PageCmp from "../../component/PageCmp";
+
 const LoginPage = () => {
-    return <div>Login page </div>
+    return <PageCmp title="Login"></PageCmp>
 }
 
-export  default LoginPage;
+export default LoginPage;
