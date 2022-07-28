@@ -7,16 +7,6 @@ import StatementCmp from "./StatementCmp";
 
 
 const PageCmp = ({title, children}) => {
-    const [statement, setStatement] = React.useState({text: "", error: false});
-
-    const setErrorStatement = (text) => {
-        setStatement({text, error: true});
-    }
-    const setSuccessStatement = (text) => {
-        setStatement({text, error: false});
-    }
-
-
     return <Container>
         <Title>{title}</Title>
         <hr width="30%" align="left" color={colors.primary}/>
