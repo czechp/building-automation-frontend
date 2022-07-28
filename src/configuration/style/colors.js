@@ -7,7 +7,8 @@ const  colors = {
     danger: "#d9534f",
     faded: "#eae5e5",
     black: "black",
-    white: "white"
+    white: "white",
+    background: "#eae5e5"
 }
 
 export default  colors;
