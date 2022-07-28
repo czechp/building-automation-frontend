@@ -3,8 +3,8 @@ import React from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleCheck, faCircleExclamation} from "@fortawesome/free-solid-svg-icons";
 
-import {StatementContext} from "./PageCmp";
 import colors from "../configuration/colors";
+import {StatementContext} from "../App";
 
 const StatementCmp = () => {
     const VISIBILITY_DURATION_MILLISECONDS = 5000;

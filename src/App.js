@@ -1,3 +1,4 @@
+import React from "react";
 import {ThemeProvider} from "styled-components";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
@@ -8,8 +9,13 @@ import TopBarLayout from "./layout/TopBarLayout";
 import NavigationBarLayout from "./layout/NavigationBarLayout";
 import LocationListPage from "./useCase/location/LocationListPage";
 import LoginPage from "./useCase/login/LoginPage";
+import {createStatementContext, useProvideStatementValues} from "./context/useStatementContext";
+
+export const StatementContext = createStatementContext();
 
 function App() {
+    const value = useProvideStatementValues();
+
     return (<div className="App">
         <BrowserRouter>
             <ThemeProvider theme={theme}>
@@ -17,10 +23,12 @@ function App() {
                 <ContainerLayout>
                     <TopBarLayout/>
                     <NavigationBarLayout/>
-                    <Routes>
-                        <Route path="/" element={<LocationListPage/>}/>
-                        <Route path="/login" element={<LoginPage/>}/>
-                    </Routes>
+                    <StatementContext.Provider value={value}>
+                        <Routes>
+                            <Route path="/" element={<LocationListPage/>}/>
+                            <Route path="/login" element={<LoginPage/>}/>
+                        </Routes>
+                    </StatementContext.Provider>
                 </ContainerLayout>
             </ThemeProvider>
         </BrowserRouter>

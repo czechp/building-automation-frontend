@@ -18,7 +18,7 @@ const LoginPage = () => {
                           onChange={setPassword} minLength={3}/>
             <ButtonCmp label="Sing in" />
             <RegisterInfo>If you do not have an account </RegisterInfo>
-            <ButtonCmp label="Register"  />
+            <ButtonCmp label="Register"/>
         </FormCmp>
     </PageCmp>
 }

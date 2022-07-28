@@ -1,11 +1,10 @@
-import styled from "styled-components";
 import React from "react";
+import styled from "styled-components";
 
 
 import colors from "../configuration/colors";
 import StatementCmp from "./StatementCmp";
 
-export const StatementContext = React.createContext({});
 
 const PageCmp = ({title, children}) => {
     const [statement, setStatement] = React.useState({text: "", error: false});
@@ -17,18 +16,12 @@ const PageCmp = ({title, children}) => {
         setStatement({text, error: false});
     }
 
+
     return <Container>
         <Title>{title}</Title>
         <hr width="30%" align="left" color={colors.primary}/>
-        <StatementContext.Provider value={{
-            text: statement.text,
-            error: statement.error,
-            setErrorStatement,
-            setSuccessStatement
-        }}>
             <Content>{children}</Content>
             <StatementCmp/>
-        </StatementContext.Provider>
     </Container>
 
 }
