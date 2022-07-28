@@ -10,10 +10,10 @@ export function useProvideStatementValues() {
     return {
         text: statement.text,
         error: statement.error,
-        setErrorStatement: function (text) {
+        showErrorInfo: function (text) {
             setStatement({text: text, error: true})
         },
-        setSuccessStatement: function (text) {
+        setSuccessInfo: function (text) {
             setStatement({text: text, error: false})
         }
     }

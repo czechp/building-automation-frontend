@@ -5,10 +5,12 @@ import PageCmp from "../../component/PageCmp";
 import FormCmp from "../../component/FormCmp";
 import TextInputCmp from "../../component/TextInputCmp";
 import ButtonCmp from "../../component/ButtonCmp";
+import {StatementContext} from "../../App";
 
 const LoginPage = () => {
     const [login, setLogin] = React.useState("");
     const [password, setPassword] = React.useState("");
+
 
     return <PageCmp title="Login">
         <FormCmp>
