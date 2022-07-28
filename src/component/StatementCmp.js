@@ -3,7 +3,7 @@ import React from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleCheck, faCircleExclamation} from "@fortawesome/free-solid-svg-icons";
 
-import colors from "../configuration/colors";
+import colors from "../configuration/style/colors";
 import {StatementContext} from "../App";
 
 const StatementCmp = () => {

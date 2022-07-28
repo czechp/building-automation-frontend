@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 
-import colors from "../configuration/colors";
+import colors from "../configuration/style/colors";
 import StatementCmp from "./StatementCmp";
 
 

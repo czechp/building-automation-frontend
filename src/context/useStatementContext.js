@@ -13,7 +13,7 @@ export function useProvideStatementValues() {
         showErrorInfo: function (text) {
             setStatement({text: text, error: true})
         },
-        setSuccessInfo: function (text) {
+        showSuccessInfo: function (text) {
             setStatement({text: text, error: false})
         },
         setStatement
