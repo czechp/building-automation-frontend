@@ -15,6 +15,7 @@ export function useProvideStatementValues() {
         },
         setSuccessInfo: function (text) {
             setStatement({text: text, error: false})
-        }
+        },
+        setStatement
     }
 }

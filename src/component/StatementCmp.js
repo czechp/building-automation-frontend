@@ -8,7 +8,7 @@ import {StatementContext} from "../App";
 
 const StatementCmp = () => {
     const VISIBILITY_DURATION_MILLISECONDS = 5000;
-    const {text, error} = React.useContext(StatementContext);
+    const {text, error, setStatement} = React.useContext(StatementContext);
     const [visibility, setVisibility] = React.useState(false);
     const color = error ? colors.danger : colors.success;
     const icon = error ? faCircleExclamation : faCircleCheck;
@@ -16,11 +16,14 @@ const StatementCmp = () => {
     const showStatementIfExists = function () {
         if (text) {
             setVisibility(true);
-            setTimeout(() => setVisibility(false), VISIBILITY_DURATION_MILLISECONDS);
+            setTimeout(() => {
+                setStatement({text: "", error: false});
+                setVisibility(false);
+            }, VISIBILITY_DURATION_MILLISECONDS);
         }
     }
 
-    React.useEffect(showStatementIfExists, [text]);
+    React.useEffect(showStatementIfExists, [text, setStatement]);
 
     return <>
         {visibility && <Container color={color}>
