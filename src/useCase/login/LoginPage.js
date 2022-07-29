@@ -46,7 +46,7 @@ const LoginPage = () => {
                           minLength={3}/>
             <TextInputCmp type="password" placeholder="Type your password" label="Password:" value={password}
                           onChange={setPassword} minLength={3}/>
-            <ButtonCmp label="Sing in" onClick={loginOnClick}/>
+            <ButtonCmp label="Sign in" onClick={loginOnClick}/>
             <RegisterInfo>If you do not have an account </RegisterInfo>
             <ButtonCmp label="Register"/>
         </FormCmp>
