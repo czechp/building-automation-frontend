@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import {useNavigate} from "react-router-dom";
+
 
 import PageCmp from "../../component/PageCmp";
 import FormCmp from "../../component/FormCmp";
@@ -13,10 +15,12 @@ import authorizationService from "../../service/authorization/authorizationServi
 const LoginPage = () => {
     const MINIMUM_FIELDS_LENGTH = 3;
     const LOGIN_ENDPOINT = "/api/accounts/login";
+    const TIME_TO_REDIRECT_TO_HOME = 3000;
 
     const [username, setUsername] = React.useState("");
     const [password, setPassword] = React.useState("");
     const {showErrorInfo, showSuccessInfo} = React.useContext(StatementContext);
+    const navigate = useNavigate();
 
 
     function validateFields() {
@@ -26,6 +30,7 @@ const LoginPage = () => {
     function loginSuccessfully(response) {
         showSuccessInfo("Login successfully");
         authorizationService.storeUserInfo({...response.data, password});
+        setTimeout(() => navigate("/"), TIME_TO_REDIRECT_TO_HOME);
     }
 
     function sendAuthorizeRequest() {
