@@ -7,7 +7,7 @@ const ROLE = "role";
 const AUTHORIZATION_HEADER = "authorizationHeader"
 
 const authorizationService = {
-    storeUserInfo, getUserInfo
+    storeUserInfo, getUserInfo, isLogged, isAdmin
 };
 
 function storeUserInfo({id, username, password, email, role}) {
@@ -32,4 +32,11 @@ function getUserInfo() {
     };
 }
 
+function isLogged() {
+    return !!storageService.readValue(AUTHORIZATION_HEADER);
+}
+
+function isAdmin(){
+    return storageService.readValue(ROLE) === "ADMIN";
+}
 export default authorizationService;
