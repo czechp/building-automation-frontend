@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React from "react";
+import React, {useCallback} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleCheck, faCircleExclamation, faXmark} from "@fortawesome/free-solid-svg-icons";
 
@@ -13,10 +13,10 @@ const StatementCmp = () => {
     const color = error ? colors.danger : colors.success;
     const icon = error ? faCircleExclamation : faCircleCheck;
 
-    function closeStatement() {
+    const closeStatement = useCallback(() => {
         setStatement({text: "", error: false});
         setVisibility(false);
-    }
+    }, [setStatement, setVisibility]);
 
     const showStatementIfExists = function () {
         if (text) {
@@ -27,7 +27,7 @@ const StatementCmp = () => {
         }
     }
 
-    React.useEffect(showStatementIfExists, [text, setStatement]);
+    React.useEffect(showStatementIfExists, [text, setStatement, closeStatement]);
 
     return <>
         {visibility && <Container color={color}>
