@@ -14,8 +14,14 @@
 - [x] routing for buttons (onClick),
 
 #### Login screen:
-- [ ] page template,
-- [ ] text input component (with password possibility),
-- [ ] login screen,
-- [ ] authorize service,
-- [ ] routing guard,
+- [x] page template,
+- [x] text input component (with password possibility),
+- [x] login screen,
+- [x] authorize service,
+
+### Guards
+- [ ] WarningPageCmp,
+- [ ] LoginWarningPage,
+- [ ] AdminWarningPage,
+- [ ] login guard,
+- [ ] admin guard,
