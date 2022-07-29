@@ -5,20 +5,14 @@ import authorizationService from "../../service/authorization/authorizationServi
 function addAuthorizationHeader(axiosInstance) {
     axiosInstance.interceptors.request.use(function (config) {
         const {authorizationHeader} = authorizationService.getUserInfo();
-
         if (authorizationHeader)
             config.headers["Authorization"] = authorizationHeader;
-
         return config;
     });
 }
 
 function createAxiosInstance() {
-    const axiosInstance = axios.create(
-        {
-            baseURL: BACKEND_URL
-        }
-    );
+    const axiosInstance = axios.create({baseURL: BACKEND_URL});
     addAuthorizationHeader(axiosInstance);
     return axiosInstance;
 }
