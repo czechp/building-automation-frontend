@@ -20,8 +20,8 @@
 - [x] authorize service,
 
 ### Guards
-- [ ] WarningPageCmp,
-- [ ] LoginWarningPage,
-- [ ] AdminWarningPage,
-- [ ] login guard,
+- [x] WarningPageCmp,
+- [x] LoginWarningPage,
+- [x] login guard,
 - [ ] admin guard,
+- [ ] AdminWarningPage,
