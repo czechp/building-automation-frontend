@@ -21,7 +21,8 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 60px;
+  flex-direction: column;
 `
 
 export default WarningPageCmp;
