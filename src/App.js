@@ -10,6 +10,8 @@ import NavigationBarLayout from "./layout/NavigationBarLayout";
 import LocationListPage from "./useCase/location/LocationListPage";
 import LoginPage from "./useCase/login/LoginPage";
 import {createStatementContext, useProvideStatementValues} from "./context/useStatementContext";
+import LoginWarningPage from "./useCase/warningPages/LoginWarningPage";
+import LoginGuard from "./guard/LoginGuard";
 
 export const StatementContext = createStatementContext();
 
@@ -25,8 +27,13 @@ function App() {
                     <NavigationBarLayout/>
                     <StatementContext.Provider value={value}>
                         <Routes>
-                            <Route path="/" element={<LocationListPage/>}/>
+                            <Route path="/" element={
+                                <LoginGuard login admin>
+                                    <LocationListPage />
+                                </LoginGuard>
+                            } />
                             <Route path="/login" element={<LoginPage/>}/>
+                            <Route path="/not-logged" element={<LoginWarningPage />}/>
                         </Routes>
                     </StatementContext.Provider>
                 </ContainerLayout>
