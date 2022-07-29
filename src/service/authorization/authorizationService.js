@@ -19,7 +19,7 @@ function storeUserInfo({id, username, password, email, role}) {
 }
 
 function createBasicAuthorizationHeader(username, password) {
-    return "BASIC " + window.btoa(`${username}:${password}`);
+    return "Basic " + window.btoa(`${username}:${password}`);
 }
 
 function getUserInfo() {
