@@ -39,10 +39,14 @@ const LoginPage = () => {
             .catch((error) => console.log(error));
     }
 
-    function loginOnClick() {
+    function loginBtnOnClick() {
         if (validateFields())
             sendAuthorizeRequest();
         else showErrorInfo("Check correctness of fields");
+    }
+
+    function registerBtnOnClick() {
+        navigate("/register");
     }
 
     return <PageCmp title="Login">
@@ -51,9 +55,9 @@ const LoginPage = () => {
                           minLength={3}/>
             <TextInputCmp type="password" placeholder="Type your password" label="Password:" value={password}
                           onChange={setPassword} minLength={3}/>
-            <ButtonCmp label="Sign in" onClick={loginOnClick}/>
+            <ButtonCmp label="Sign in" onClick={loginBtnOnClick}/>
             <RegisterInfo>If you do not have an account </RegisterInfo>
-            <ButtonCmp label="Register"/>
+            <ButtonCmp label="Register" onClick={registerBtnOnClick}/>
         </FormCmp>
     </PageCmp>
 }
