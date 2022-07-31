@@ -4,12 +4,15 @@ const ButtonCmp = ({
                        label,
                        color = "primary",
                        width = 100,
+                        style = {},
                        onClick = () => console.log("Button without assigned onClick")
                    }
 ) => {
     return <Button onClick={() => onClick()}
                    color={color}
-                   width={width}>
+                   width={width}
+                   style={style}
+    >
         {label}
     </Button>
 }
@@ -28,7 +31,7 @@ const Button = styled.button`
   &:hover {
     cursor: pointer;
     color: ${({theme}) => theme.colors["white"]};
-    background-color: ${({color, theme}) => theme.colors["secondary"]};
+    background-color: ${({color, theme}) => theme.colors[color]};
 
   }
 `
