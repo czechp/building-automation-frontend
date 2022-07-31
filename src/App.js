@@ -16,7 +16,8 @@ import LoginGuard from "./guard/LoginGuard";
 export const StatementContext = createStatementContext();
 
 function App() {
-    const value = useProvideStatementValues();
+    const statementContextValue = useProvideStatementValues();
+
 
     return (<div className="App">
         <BrowserRouter>
@@ -25,15 +26,15 @@ function App() {
                 <ContainerLayout>
                     <TopBarLayout/>
                     <NavigationBarLayout/>
-                    <StatementContext.Provider value={value}>
+                    <StatementContext.Provider value={statementContextValue}>
                         <Routes>
                             <Route path="/" element={
                                 <LoginGuard login admin>
-                                    <LocationListPage />
+                                    <LocationListPage/>
                                 </LoginGuard>
-                            } />
+                            }/>
                             <Route path="/login" element={<LoginPage/>}/>
-                            <Route path="/not-logged" element={<LoginWarningPage />}/>
+                            <Route path="/not-logged" element={<LoginWarningPage/>}/>
                         </Routes>
                     </StatementContext.Provider>
                 </ContainerLayout>
