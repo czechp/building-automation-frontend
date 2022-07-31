@@ -44,16 +44,15 @@ const Container = styled.div`
   background-color: ${({theme}) => theme.colors.background};
   width: 500px;
   min-height: 70px;
-  position: absolute;
-  right: 0px;
-  bottom: 0px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
   margin: 20px;
   padding: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
-
 `
 const TextContainer = styled.p`
   text-align: center;
