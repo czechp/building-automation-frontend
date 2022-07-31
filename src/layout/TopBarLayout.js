@@ -3,6 +3,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHouseSignal} from "@fortawesome/free-solid-svg-icons";
 
 import SeparatorCmp from "../component/SeparatorCmp";
+import LoginInfoCmp from "../component/LoginInfoCmp";
 
 const TopBarLayout = () => {
     return <>
@@ -14,6 +15,7 @@ const TopBarLayout = () => {
                     <LogoSubheader>Building <br/>Automation</LogoSubheader>
                 </Logo>
             </LogoContainer>
+            <LoginInfoCmp />
         </Container>
         <SeparatorCmp/>
     </>
@@ -23,6 +25,8 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 150px;
 `
 
 const LogoContainer = styled.div`
