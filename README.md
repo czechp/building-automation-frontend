@@ -30,3 +30,8 @@
 ### Logout
 - [ ] authorization context,
 - [ ] logout component, clear credentials and navigate to login page
+
+### Register
+- [ ] register page,
+- [ ] navigate to register page from login page,
+- [ ] display URL to account activation (only development mode)
