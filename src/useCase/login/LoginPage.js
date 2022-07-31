@@ -15,7 +15,7 @@ import authorizationService from "../../service/authorization/authorizationServi
 const LoginPage = () => {
     const MINIMUM_FIELDS_LENGTH = 3;
     const LOGIN_ENDPOINT = "/api/accounts/login";
-    const TIME_TO_REDIRECT_TO_HOME = 3000;
+    const TIME_TO_REDIRECT_TO_HOME = 1000;
 
     const [username, setUsername] = React.useState("");
     const [password, setPassword] = React.useState("");
