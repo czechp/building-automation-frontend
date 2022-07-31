@@ -25,3 +25,8 @@
 - [x] login guard,
 - [ ] admin guard,
 - [ ] AdminWarningPage,
+
+
+### Logout
+- [ ] authorization context,
+- [ ] logout component, clear credentials and navigate to login page
