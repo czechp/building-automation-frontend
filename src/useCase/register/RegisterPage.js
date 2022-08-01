@@ -7,6 +7,7 @@ import ButtonCmp from "../../component/ButtonCmp";
 import {StatementContext} from "../../App";
 import {fieldsValidator} from "../../service/validator/fieldsValidator";
 import sendPostRequest from "../../service/http/sendPostRequest";
+import httpErrorHandler from "../../service/http/httpErrorHandler";
 
 const RegisterPage = () => {
     const MIN_FIELD_LENGTH = 3;
@@ -52,14 +53,9 @@ const RegisterPage = () => {
             password: formFields.password,
             passwordConfirm: formFields.passwordConfirm
         };
-        //TODO: resolve error
         sendPostRequest(REGISTER_ENDPOINT, requestBody)
-            .then((response) => {
-                showSuccessInfo("Account created");
-            })
-            .catch((error) => {
-                console.log(error)
-            });
+            .then((response) => showSuccessInfo("Account created"))
+            .catch((error) => showErrorInfo(httpErrorHandler(error)));
     }
 
     function registerBtnOnClick() {

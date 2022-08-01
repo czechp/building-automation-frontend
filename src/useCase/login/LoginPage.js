@@ -11,6 +11,7 @@ import {StatementContext} from "../../App";
 import {fieldsValidator} from "../../service/validator/fieldsValidator";
 import sendPostRequest from "../../service/http/sendPostRequest";
 import authorizationService from "../../service/authorization/authorizationService";
+import httpErrorHandler from "../../service/http/httpErrorHandler";
 
 const LoginPage = () => {
     const MINIMUM_FIELDS_LENGTH = 3;
@@ -36,7 +37,7 @@ const LoginPage = () => {
     function sendAuthorizeRequest() {
         sendPostRequest(LOGIN_ENDPOINT, {username, password})
             .then((response) => loginSuccessfully(response))
-            .catch((error) => console.log(error));
+            .catch((error) => showErrorInfo(httpErrorHandler(error)));
     }
 
     function loginBtnOnClick() {
