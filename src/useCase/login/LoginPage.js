@@ -50,6 +50,10 @@ const LoginPage = () => {
         navigate("/register");
     }
 
+    function activateAccountBtnClick(){
+        navigate("/activate-account");
+    }
+
     return <PageCmp title="Login">
         <FormCmp>
             <TextInputCmp placeholder="Type your login" label="Username:" value={username} onChange={setUsername}
@@ -57,8 +61,8 @@ const LoginPage = () => {
             <TextInputCmp type="password" placeholder="Type your password" label="Password:" value={password}
                           onChange={setPassword} minLength={3}/>
             <ButtonCmp label="Sign in" onClick={loginBtnOnClick}/>
-            <RegisterInfo>If you do not have an account </RegisterInfo>
             <ButtonCmp label="Register" onClick={registerBtnOnClick}/>
+            <ButtonCmp label="Activate account" onClick={activateAccountBtnClick}/>
         </FormCmp>
     </PageCmp>
 }

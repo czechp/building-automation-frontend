@@ -12,7 +12,8 @@ import LoginPage from "./useCase/login/LoginPage";
 import {createStatementContext, useProvideStatementValues} from "./context/useStatementContext";
 import LoginWarningPage from "./useCase/warningPages/LoginWarningPage";
 import LoginGuard from "./guard/LoginGuard";
-import RegisterPage from "./useCase/register/RegisterPage";
+import RegisterPage from "./useCase/register/registerPage/RegisterPage";
+import ActivateAccountPage from "./useCase/register/activeAccountPage/ActivateAccountPage";
 
 export const StatementContext = createStatementContext();
 
@@ -36,6 +37,7 @@ function App() {
                             }/>
                             <Route path="/login" element={<LoginPage/>}/>
                             <Route path="/register" element={<RegisterPage />} />
+                            <Route path="/activate-account" element={<ActivateAccountPage />} />
                             <Route path="/not-logged" element={<LoginWarningPage/>}/>
                         </Routes>
                     </StatementContext.Provider>

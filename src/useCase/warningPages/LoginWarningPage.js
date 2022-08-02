@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
-import WarningPageCmp from "../../component/WarningPageCmp";
+import InfoPageCmp from "../../component/InfoPageCmp";
 import ButtonCmp from "../../component/ButtonCmp";
 import {useNavigate} from "react-router-dom";
 
 const LoginWarningPage = () => {
     const navigate = useNavigate();
 
-    return <WarningPageCmp title="Access denied">
+    return <InfoPageCmp title="Access denied" error={true}>
         <Text> In order to get access this page have to login in.</Text>
         <ButtonCmp label="Login" width={"50"} onClick={()=>navigate("/login")}/>
-    </WarningPageCmp>
+    </InfoPageCmp>
 }
 
 const Text = styled.p`
