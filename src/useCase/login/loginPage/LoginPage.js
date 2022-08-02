@@ -1,17 +1,16 @@
 import React from "react";
-import styled from "styled-components";
 import {useNavigate} from "react-router-dom";
 
 
-import PageCmp from "../../component/PageCmp";
-import FormCmp from "../../component/FormCmp";
-import TextInputCmp from "../../component/TextInputCmp";
-import ButtonCmp from "../../component/ButtonCmp";
-import {StatementContext} from "../../App";
-import {fieldsValidator} from "../../service/validator/fieldsValidator";
-import sendRequestService from "../../service/http/sendRequestService";
-import authorizationService from "../../service/authorization/authorizationService";
-import httpErrorHandler from "../../service/http/httpErrorHandler";
+import PageCmp from "../../../component/PageCmp";
+import FormCmp from "../../../component/FormCmp";
+import TextInputCmp from "../../../component/TextInputCmp";
+import ButtonCmp from "../../../component/ButtonCmp";
+import {StatementContext} from "../../../App";
+import {fieldsValidator} from "../../../service/validator/fieldsValidator";
+import sendRequestService from "../../../service/http/sendRequestService";
+import authorizationService from "../../../service/authorization/authorizationService";
+import httpErrorHandler from "../../../service/http/httpErrorHandler";
 
 const LoginPage = () => {
     const MINIMUM_FIELDS_LENGTH = 3;
@@ -66,8 +65,5 @@ const LoginPage = () => {
     </PageCmp>
 }
 
-const RegisterInfo = styled.p`
-    font-style: italic;
-`
 
 export default LoginPage;
