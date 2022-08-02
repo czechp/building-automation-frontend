@@ -16,6 +16,8 @@ import RegisterPage from "./useCase/register/registerPage/RegisterPage";
 import ActivateAccountPage from "./useCase/register/activeAccountPage/ActivateAccountPage";
 import StatementCmp from "./component/StatementCmp";
 import AdminRequirementPage from "./useCase/warningPages/AdminRequirementPage";
+import AdminGuard from "./guard/AdminGuard";
+import AccountsListPage from "./useCase/account/accountsListPage/AccountsListPage";
 
 export const StatementContext = createStatementContext();
 
@@ -33,16 +35,13 @@ function App() {
                         <TopBarLayout/>
                         <NavigationBarLayout/>
                         <Routes>
-                            <Route path="/" element={
-                                <LoginGuard login admin>
-                                    <LocationListPage/>
-                                </LoginGuard>
-                            }/>
+                            <Route path="/" element={<LoginGuard><LocationListPage/></LoginGuard>}/>
                             <Route path="/login" element={<LoginPage/>}/>
                             <Route path="/register" element={<RegisterPage/>}/>
                             <Route path="/activate-account" element={<ActivateAccountPage/>}/>
+                            <Route path="/accounts" element={<AdminGuard><AccountsListPage/></AdminGuard>}/>
                             <Route path="/not-logged" element={<LoginRequirementPage/>}/>
-                            <Route path="/admin-access" element={<AdminRequirementPage />} />
+                            <Route path="/admin-access" element={<AdminRequirementPage/>}/>
                         </Routes>
 
                     </ContainerLayout>
