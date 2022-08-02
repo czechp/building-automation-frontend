@@ -1,18 +1,21 @@
 import styled from "styled-components";
 
 import PageCmp from "./PageCmp";
+import colors from "../configuration/style/colors";
 
-const WarningPageCmp = ({title, children}) => {
+const InfoPageCmp = ({title, children, error=false}) => {
+    const color = error ? colors.danger : colors.success;
+
     return <PageCmp title={title}>
-        <Container>
+        <Container color={color}>
             {children}
         </Container>
     </PageCmp>
 };
 
 const Container = styled.div`
-  color: ${({theme}) => theme.colors.danger};
-  border: 4px solid ${({theme}) => theme.colors.danger};
+  color: ${({color}) => color};
+  border: 4px solid ${({color}) => color};
   min-width: 90%;
   min-height: 400px;
   border-radius: 20px;
@@ -21,8 +24,9 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  font-size: 60px;
+  font-size: 40px;
   flex-direction: column;
+  text-align: center;
 `
 
-export default WarningPageCmp;
+export default InfoPageCmp;

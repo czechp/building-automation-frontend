@@ -11,7 +11,6 @@ const PageCmp = ({title, children}) => {
         <Title>{title}</Title>
         <hr width="30%" align="left" color={colors.primary}/>
             <Content>{children}</Content>
-            <StatementCmp/>
     </Container>
 
 }
@@ -32,6 +31,8 @@ const Content = styled.div`
   margin-top: 50px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 60%;
 `
 
