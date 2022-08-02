@@ -21,7 +21,7 @@
 
 ### Guards
 - [x] WarningPageCmp,
-- [x] LoginWarningPage,
+- [x] LoginRequirementPage,
 - [x] login guard,
 
 

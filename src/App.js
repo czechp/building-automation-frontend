@@ -10,7 +10,7 @@ import NavigationBarLayout from "./layout/NavigationBarLayout";
 import LocationListPage from "./useCase/location/locationListPage/LocationListPage";
 import LoginPage from "./useCase/login/loginPage/LoginPage";
 import {createStatementContext, useProvideStatementValues} from "./context/useStatementContext";
-import LoginWarningPage from "./useCase/warningPages/LoginWarningPage";
+import LoginRequirementPage from "./useCase/warningPages/LoginRequirementPage";
 import LoginGuard from "./guard/LoginGuard";
 import RegisterPage from "./useCase/register/registerPage/RegisterPage";
 import ActivateAccountPage from "./useCase/register/activeAccountPage/ActivateAccountPage";
@@ -40,7 +40,7 @@ function App() {
                             <Route path="/login" element={<LoginPage/>}/>
                             <Route path="/register" element={<RegisterPage/>}/>
                             <Route path="/activate-account" element={<ActivateAccountPage/>}/>
-                            <Route path="/not-logged" element={<LoginWarningPage/>}/>
+                            <Route path="/not-logged" element={<LoginRequirementPage/>}/>
                         </Routes>
 
                     </ContainerLayout>

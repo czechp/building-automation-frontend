@@ -4,7 +4,7 @@ import InfoPageCmp from "../../component/InfoPageCmp";
 import ButtonCmp from "../../component/ButtonCmp";
 import {useNavigate} from "react-router-dom";
 
-const LoginWarningPage = () => {
+const LoginRequirementPage = () => {
     const navigate = useNavigate();
 
     return <InfoPageCmp title="Access denied" error={true}>
@@ -17,5 +17,5 @@ const Text = styled.p`
   text-align: center;
 `;
 
-export default LoginWarningPage;
+export default LoginRequirementPage;
 
