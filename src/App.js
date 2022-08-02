@@ -15,6 +15,7 @@ import LoginGuard from "./guard/LoginGuard";
 import RegisterPage from "./useCase/register/registerPage/RegisterPage";
 import ActivateAccountPage from "./useCase/register/activeAccountPage/ActivateAccountPage";
 import StatementCmp from "./component/StatementCmp";
+import AdminRequirementPage from "./useCase/warningPages/AdminRequirementPage";
 
 export const StatementContext = createStatementContext();
 
@@ -41,6 +42,7 @@ function App() {
                             <Route path="/register" element={<RegisterPage/>}/>
                             <Route path="/activate-account" element={<ActivateAccountPage/>}/>
                             <Route path="/not-logged" element={<LoginRequirementPage/>}/>
+                            <Route path="/admin-access" element={<AdminRequirementPage />} />
                         </Routes>
 
                     </ContainerLayout>
