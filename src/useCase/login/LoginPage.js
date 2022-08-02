@@ -16,7 +16,6 @@ import httpErrorHandler from "../../service/http/httpErrorHandler";
 const LoginPage = () => {
     const MINIMUM_FIELDS_LENGTH = 3;
     const LOGIN_ENDPOINT = "/api/accounts/login";
-    const TIME_TO_REDIRECT_TO_HOME = 1000;
 
     const [username, setUsername] = React.useState("");
     const [password, setPassword] = React.useState("");
@@ -31,7 +30,7 @@ const LoginPage = () => {
     function loginSuccessfully(response) {
         showSuccessInfo("Login successfully");
         authorizationService.storeUserInfo({...response.data, password});
-        setTimeout(() => navigate("/"), TIME_TO_REDIRECT_TO_HOME);
+        navigate("/")
     }
 
     function sendAuthorizeRequest() {

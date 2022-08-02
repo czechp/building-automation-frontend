@@ -11,7 +11,6 @@ const PageCmp = ({title, children}) => {
         <Title>{title}</Title>
         <hr width="30%" align="left" color={colors.primary}/>
             <Content>{children}</Content>
-            <StatementCmp/>
     </Container>
 
 }

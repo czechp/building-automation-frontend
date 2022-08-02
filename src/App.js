@@ -14,6 +14,7 @@ import LoginWarningPage from "./useCase/warningPages/LoginWarningPage";
 import LoginGuard from "./guard/LoginGuard";
 import RegisterPage from "./useCase/register/registerPage/RegisterPage";
 import ActivateAccountPage from "./useCase/register/activeAccountPage/ActivateAccountPage";
+import StatementCmp from "./component/StatementCmp";
 
 export const StatementContext = createStatementContext();
 
@@ -22,13 +23,14 @@ function App() {
 
 
     return (<div className="App">
-        <BrowserRouter>
-            <ThemeProvider theme={theme}>
-                <GlobalStyles/>
-                <ContainerLayout>
-                    <TopBarLayout/>
-                    <NavigationBarLayout/>
-                    <StatementContext.Provider value={statementContextValue}>
+        <ThemeProvider theme={theme}>
+
+            <StatementContext.Provider value={statementContextValue}>
+                <BrowserRouter>
+                    <GlobalStyles/>
+                    <ContainerLayout>
+                        <TopBarLayout/>
+                        <NavigationBarLayout/>
                         <Routes>
                             <Route path="/" element={
                                 <LoginGuard login admin>
@@ -36,14 +38,18 @@ function App() {
                                 </LoginGuard>
                             }/>
                             <Route path="/login" element={<LoginPage/>}/>
-                            <Route path="/register" element={<RegisterPage />} />
-                            <Route path="/activate-account" element={<ActivateAccountPage />} />
+                            <Route path="/register" element={<RegisterPage/>}/>
+                            <Route path="/activate-account" element={<ActivateAccountPage/>}/>
                             <Route path="/not-logged" element={<LoginWarningPage/>}/>
                         </Routes>
-                    </StatementContext.Provider>
-                </ContainerLayout>
-            </ThemeProvider>
-        </BrowserRouter>
+
+                    </ContainerLayout>
+                </BrowserRouter>
+                <StatementCmp/>
+            </StatementContext.Provider>
+        </ThemeProvider>
+
+
     </div>);
 }
 
