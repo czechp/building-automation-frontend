@@ -1,10 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-
 import colors from "../configuration/style/colors";
-import StatementCmp from "./StatementCmp";
-
 
 const PageCmp = ({title, children}) => {
     return <Container>
@@ -33,7 +30,7 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 60%;
+  width: 70%;
 `
 
 
