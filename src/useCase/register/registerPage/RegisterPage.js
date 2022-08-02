@@ -7,7 +7,7 @@ import FormCmp from "../../../component/FormCmp";
 import TextInputCmp from "../../../component/TextInputCmp";
 import ButtonCmp from "../../../component/ButtonCmp";
 import {StatementContext} from "../../../App";
-import sendPostRequest from "../../../service/http/sendPostRequest";
+import sendRequestService from "../../../service/http/sendRequestService";
 import httpErrorHandler from "../../../service/http/httpErrorHandler";
 import useRegisterFormField from "./hook/useRegisterPageFieldsProvider";
 import registerPageValidator from "./validator/registerPageValidator";
@@ -33,7 +33,7 @@ const RegisterPage = () => {
             password: formFields.password,
             passwordConfirm: formFields.passwordConfirm
         };
-        sendPostRequest(REGISTER_ENDPOINT, requestBody)
+        sendRequestService.post(REGISTER_ENDPOINT, requestBody)
             .then((response) => registerSuccess(response.data))
             .catch((error) => showErrorInfo(httpErrorHandler(error)));
     }
