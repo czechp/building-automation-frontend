@@ -23,7 +23,11 @@ function createKeyValuePair(param) {
 }
 
 const sendRequestService = {
-    post: function (endpoint, body = {}, params=[]) {
+    get: function (endpoint, params = []) {
+        return createAxiosInstance()
+            .get(endpoint, createConfig(params));
+    },
+    post: function (endpoint, body = {}, params = []) {
         return createAxiosInstance()
             .post(endpoint, body, createConfig(params));
     },
