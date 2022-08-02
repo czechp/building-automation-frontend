@@ -9,7 +9,7 @@ import ButtonCmp from "../../../component/ButtonCmp";
 import {StatementContext} from "../../../App";
 import sendRequestService from "../../../service/http/sendRequestService";
 import httpErrorHandler from "../../../service/http/httpErrorHandler";
-import useRegisterFormField from "./hook/useRegisterPageFieldsProvider";
+import useRegisterFormField from "./forms/useRegisterPageFieldsProvider";
 import registerPageValidator from "./validator/registerPageValidator";
 
 const RegisterPage = () => {
