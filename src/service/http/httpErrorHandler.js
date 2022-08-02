@@ -14,7 +14,7 @@ function generateInfoByStatus(error) {
         case 403:
             return "You have no permission to this resource";
         case 404:
-            return "This element does not exist"
+            return  error.response.data.message ||  "This element does not exist"
         case 405:
             return "This http method does not exist"
         case 500:
