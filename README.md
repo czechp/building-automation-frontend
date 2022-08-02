@@ -23,15 +23,21 @@
 - [x] WarningPageCmp,
 - [x] LoginWarningPage,
 - [x] login guard,
-- [ ] admin guard,
-- [ ] AdminWarningPage,
 
 
 ### Logout
-- [ ] authorization context,
-- [ ] logout component, clear credentials and navigate to login page
+- [x] authorization context,
+- [x] logout component, clear credentials and navigate to login page
 
 ### Register
-- [ ] register page,
-- [ ] navigate to register page from login page,
-- [ ] display URL to account activation (only development mode)
+- [x] register page,
+- [x] navigate to register page from login page,
+- [x] display URL to account activation (only development mode)
+
+### Accounts
+- [ ] admin guard,
+- [ ] access denied page,
+- [ ] account list page,
+- [ ] account details page,
+- [ ] delete account,
+- [ ] confirm by admin,
