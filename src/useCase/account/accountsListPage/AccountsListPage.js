@@ -1,26 +1,32 @@
 import React from "react";
 
 import PageCmp from "../../../component/PageCmp";
-import useGetAccountsRequest from "./request/useGetAccountsRequest";
+import useGetAccountsRequest from "./hook/useGetAccountsRequest";
 import {Table, Tbody, Td, Th, Thead, Tr} from "../../../configuration/styledComponents/Table";
 import accountRoleConverter from "../../../service/converter/accountRoleConverter";
 import dateConverter from "../../../service/converter/dateConverter";
+import useSortingHook from "../../../hooks/useSortingHook";
 
 const AccountsListPage = () => {
-    const accounts = useGetAccountsRequest();
+    const {sort, setField, toggleAsc} = useSortingHook();
+    const accounts = useGetAccountsRequest(sort);
 
+    function sortByField(fieldName) {
+        setField(fieldName);
+        toggleAsc();
+    }
 
     return <PageCmp title="Accounts list">
         <Table>
             <Thead>
                 <Tr>
-                    <Th>Id:</Th>
-                    <Th>Username:</Th>
-                    <Th>Email:</Th>
-                    <Th>Role:</Th>
+                    <Th onClick={() => sortByField("id")}>Id:</Th>
+                    <Th onClick={() => sortByField("username")}>Username:</Th>
+                    <Th onClick={() => sortByField("email")}>Email:</Th>
+                    <Th onClick={() => sortByField("accountRole")}>Role:</Th>
                     <Th>Admin confirm:</Th>
                     <Th>Email confirm:</Th>
-                    <Th>Creation date:</Th>
+                    <Th onClick={() => sortByField("creationTimestamp")}>Creation date:</Th>
                 </Tr>
             </Thead>
             <Tbody>
@@ -40,7 +46,7 @@ const AccountRow = ({account, id}) => {
         <Td key={`email-${account.id}-${id}`}>{account.email}</Td>
         <Td key={`role-${account.id}-${id}`}>{accountRoleConverter.toText(account.role)}</Td>
         <Td key={`adminConfirm-${account.id}-${id}`}>{account.adminActivated ? "Yes" : "No"}</Td>
-        <Td key={`adminConfirm-${account.id}-${id}`}>{account.emailConfirmed ? "Yes" : "No"}</Td>
+        <Td key={`emailConfirm-${account.id}-${id}`}>{account.emailConfirmed ? "Yes" : "No"}</Td>
 
         <Td key={`creationDate-${account.id}-${id}`}>{dateConverter.toFullDateTime(account.creationTimestamp)}</Td>
     </Tr>
