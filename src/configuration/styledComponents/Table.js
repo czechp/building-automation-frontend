@@ -12,6 +12,8 @@ export const Tr = styled.tr`
     }
 `;
 
+export const Thead = styled.thead``;
+
 export const Th = styled.th`
   text-align: center;
   padding: 20px;
@@ -22,8 +24,10 @@ export const Th = styled.th`
     color: ${({theme}) => theme.colors.primary};
     cursor: pointer;
   }
-
 `;
+
+export const Tbody = styled.tbody``;
+
 export const Td = styled.td`
   text-align: center;
   padding: 20px;
