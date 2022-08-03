@@ -18,6 +18,8 @@ const AccountsListPage = () => {
                     <Th>Username:</Th>
                     <Th>Email:</Th>
                     <Th>Role:</Th>
+                    <Th>Admin confirm:</Th>
+                    <Th>Email confirm:</Th>
                     <Th>Creation date:</Th>
                 </Tr>
             </Thead>
@@ -37,6 +39,9 @@ const AccountRow = ({account, id}) => {
         <Td key={`username-${account.id}-${id}`}>{account.username}</Td>
         <Td key={`email-${account.id}-${id}`}>{account.email}</Td>
         <Td key={`role-${account.id}-${id}`}>{accountRoleConverter.toText(account.role)}</Td>
+        <Td key={`adminConfirm-${account.id}-${id}`}>{account.adminActivated ? "Yes" : "No"}</Td>
+        <Td key={`adminConfirm-${account.id}-${id}`}>{account.emailConfirmed ? "Yes" : "No"}</Td>
+
         <Td key={`creationDate-${account.id}-${id}`}>{dateConverter.toFullDateTime(account.creationTimestamp)}</Td>
     </Tr>
 }
