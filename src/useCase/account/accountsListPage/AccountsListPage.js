@@ -3,6 +3,7 @@ import React from "react";
 import PageCmp from "../../../component/PageCmp";
 import useGetAccountsRequest from "./request/useGetAccountsRequest";
 import {Table, Td, Th, Tr} from "../../../configuration/styledComponents/Table";
+import accountRoleConverter from "../../../service/converter/accountRoleConverter";
 
 const AccountsListPage = () => {
     const accounts = useGetAccountsRequest();
@@ -30,7 +31,7 @@ const AccountRow = ({account, id}) => {
         <Td>{account.id}</Td>
         <Td>{account.username}</Td>
         <Td>{account.email}</Td>
-        <Td>{account.role}</Td>
+        <Td>{accountRoleConverter.toText(account.role)}</Td>
         <Td>{account.creationTimestamp}</Td>
     </Tr>
 }
