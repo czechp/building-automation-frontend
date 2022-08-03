@@ -49,7 +49,7 @@ const RegisterPage = () => {
     }
 
     return <PageCmp title="Register">
-        <FormCmp title="Register">
+        <FormCmp>
             <TextInputCmp label={"Username:"} value={formFields.username} onChange={formFields.setUsername}
                           minLength={3} placeholder="Type username"/>
             <TextInputCmp label={"Email:"} value={formFields.email} onChange={formFields.setEmail} minLength={3}
