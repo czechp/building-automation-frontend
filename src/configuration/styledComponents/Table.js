@@ -16,9 +16,10 @@ export const Thead = styled.thead``;
 
 export const Th = styled.th`
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   border-bottom: 2px solid ${({theme}) => theme.colors.primary};
   border-top: 2px solid ${({theme}) => theme.colors.primary};
+  font-size: smaller;
   &:hover{
     background-color: ${({theme}) => theme.colors.white};
     color: ${({theme}) => theme.colors.primary};
@@ -30,7 +31,7 @@ export const Tbody = styled.tbody``;
 
 export const Td = styled.td`
   text-align: center;
-  padding: 20px;
+  padding: 15px;
   border-bottom: 2px solid ${({theme}) => theme.colors.primary};
-
+  font-size: smaller;
 `;
