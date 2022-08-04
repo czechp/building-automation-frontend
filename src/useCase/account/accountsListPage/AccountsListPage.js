@@ -3,13 +3,14 @@ import React from "react";
 import PageCmp from "../../../component/PageCmp";
 import useGetAccountsRequest from "./hook/useGetAccountsRequest";
 import {Table, Tbody, Td, Th, Thead, Tr} from "../../../configuration/styledComponents/Table";
-import accountRoleConverter from "../../../service/converter/accountRoleConverter";
+import AccountRoleConverter from "../../../service/converter/accountRoleConverter";
 import dateConverter from "../../../service/converter/dateConverter";
 import useSortingHook from "../../../hooks/useSortingHook";
 
 const AccountsListPage = () => {
     const {sort, setField, toggleAsc} = useSortingHook();
     const accounts = useGetAccountsRequest(sort);
+
 
     function sortByField(fieldName) {
         setField(fieldName);
@@ -40,6 +41,8 @@ const AccountsListPage = () => {
 
 
 const AccountRow = ({account, id}) => {
+    const accountRoleConverter = new AccountRoleConverter();
+
     return <Tr key={`${account.id}-${id}`}>
         <Td key={`id-${account.id}-${id}`}>{account.id}</Td>
         <Td key={`username-${account.id}-${id}`}>{account.username}</Td>

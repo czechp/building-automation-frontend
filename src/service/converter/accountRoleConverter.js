@@ -1,5 +1,5 @@
-const accountRoleConverter = {
-    toText: function (role) {
+function toText() {
+    return function (role) {
         switch (role) {
             case "ADMIN":
                 return "Administrator";
@@ -10,7 +10,12 @@ const accountRoleConverter = {
             default:
                 return "Not recognized";
         }
-    }
+    };
 }
 
-export default accountRoleConverter;
+function AccountRoleConverter() {
+    this.toText = toText;
+}
+
+
+export default AccountRoleConverter;
