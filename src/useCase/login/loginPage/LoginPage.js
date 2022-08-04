@@ -8,7 +8,7 @@ import TextInputCmp from "../../../component/TextInputCmp";
 import ButtonCmp from "../../../component/ButtonCmp";
 import {StatementContext} from "../../../App";
 import {fieldsValidator} from "../../../service/validator/fieldsValidator";
-import sendRequestService from "../../../service/http/sendRequestService";
+import SendRequestService from "../../../service/http/sendRequestService";
 import authorizationService from "../../../service/authorization/authorizationService";
 import httpErrorHandler from "../../../service/http/httpErrorHandler";
 
@@ -33,6 +33,7 @@ const LoginPage = () => {
     }
 
     function sendAuthorizeRequest() {
+        const sendRequestService = new SendRequestService();
         sendRequestService.post(LOGIN_ENDPOINT, {username, password})
             .then((response) => loginSuccessfully(response))
             .catch((error) => showErrorInfo(httpErrorHandler(error)));

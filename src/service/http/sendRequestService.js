@@ -1,10 +1,17 @@
 import createAxiosInstance from "../../configuration/http/axiosConfiguration";
 
+function SendRequestService() {
+    this._axios = createAxiosInstance();
+    this.get = (endpoint, params = []) => this._axios.get(endpoint, createConfig(params));
+    this.post = (endpoint, body = {}, params = []) => this._axios.post(endpoint, body, createConfig(params));
+    this.patch = (endpoint, body = {}, params = []) => this._axios.patch(endpoint, body, createConfig(params));
+}
+
 
 function createConfig(params = []) {
     return {
         params: createParams(params)
-    }
+    };
 }
 
 function createParams(params) {
@@ -22,20 +29,5 @@ function createKeyValuePair(param) {
     return {key, value};
 }
 
-const sendRequestService = {
-    get: function (endpoint, params = []) {
-        return createAxiosInstance()
-            .get(endpoint, createConfig(params));
-    },
-    post: function (endpoint, body = {}, params = []) {
-        return createAxiosInstance()
-            .post(endpoint, body, createConfig(params));
-    },
-    patch: function (endpoint, body = {}, params = []) {
-        return createAxiosInstance()
-            .patch(endpoint, body, createConfig(params));
-    }
-}
 
-
-export default sendRequestService;
+export default SendRequestService;
