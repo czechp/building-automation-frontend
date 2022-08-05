@@ -6,10 +6,14 @@ import {Table, Tbody, Td, Th, Thead, Tr} from "../../../configuration/styledComp
 import AccountRoleConverter from "../../../service/converter/accountRoleConverter";
 import DateConverter from "../../../service/converter/dateConverter";
 import useSortingHook from "../../../hooks/useSortingHook";
+import GetRequestService from "../../../service/http/getRequestService";
 
 const AccountsListPage = () => {
+    const getRequestService = new GetRequestService();
+
+
     const {sort, setField, toggleAsc} = useSortingHook();
-    const accounts = useGetAccountsRequest(sort);
+    const accounts = getRequestService.getObjectsArray("/api/accounts",sort);
 
 
     function sortByField(fieldName) {
