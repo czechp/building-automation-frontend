@@ -1,5 +1,4 @@
-function toText() {
-    return function (role) {
+function convertToText(role) {
         switch (role) {
             case "ADMIN":
                 return "Administrator";
@@ -9,12 +8,11 @@ function toText() {
                 return "User";
             default:
                 return "Not recognized";
-        }
     };
 }
 
 function AccountRoleConverter() {
-    this.toText = toText;
+    this.toText = convertToText;
 }
 
 

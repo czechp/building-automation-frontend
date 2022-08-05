@@ -4,7 +4,7 @@ import PageCmp from "../../../component/PageCmp";
 import useGetAccountsRequest from "./hook/useGetAccountsRequest";
 import {Table, Tbody, Td, Th, Thead, Tr} from "../../../configuration/styledComponents/Table";
 import AccountRoleConverter from "../../../service/converter/accountRoleConverter";
-import dateConverter from "../../../service/converter/dateConverter";
+import DateConverter from "../../../service/converter/dateConverter";
 import useSortingHook from "../../../hooks/useSortingHook";
 
 const AccountsListPage = () => {
@@ -42,6 +42,7 @@ const AccountsListPage = () => {
 
 const AccountRow = ({account, id}) => {
     const accountRoleConverter = new AccountRoleConverter();
+    const dateConverter = new DateConverter();
 
     return <Tr key={`${account.id}-${id}`}>
         <Td key={`id-${account.id}-${id}`}>{account.id}</Td>
