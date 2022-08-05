@@ -1,7 +1,8 @@
 import {Navigate} from "react-router-dom";
-import authorizationService from "../service/authorization/authorizationService";
+import AuthorizationService from "../service/authorization/authorizationService";
 
 const AdminGuard = ({children}) => {
+    const authorizationService = new AuthorizationService();
     const accessPermitted = authorizationService.isLogged() && authorizationService.isAdmin();
     return accessPermitted ? children : <Navigate to="/admin-access"/>;
 }

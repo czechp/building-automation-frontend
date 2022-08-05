@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-import authorizationService from "../service/authorization/authorizationService";
+import AuthorizationService from "../service/authorization/authorizationService";
 import ButtonCmp from "./ButtonCmp";
 import {useNavigate} from "react-router-dom";
 
 const LoginInfoCmp = () => {
+    const authorizationService = new AuthorizationService();
     const navigate = useNavigate();
     const userLogged = authorizationService.isLogged();
     const userInfo = authorizationService.getUserInfo();

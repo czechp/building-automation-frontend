@@ -9,7 +9,7 @@ import ButtonCmp from "../../../component/ButtonCmp";
 import {StatementContext} from "../../../App";
 import {fieldsValidator} from "../../../service/validator/fieldsValidator";
 import SendRequestService from "../../../service/http/sendRequestService";
-import authorizationService from "../../../service/authorization/authorizationService";
+import AuthorizationService from "../../../service/authorization/authorizationService";
 import httpErrorHandler from "../../../service/http/httpErrorHandler";
 
 const LoginPage = () => {
@@ -27,6 +27,7 @@ const LoginPage = () => {
     }
 
     function loginSuccessfully(response) {
+        const authorizationService = new AuthorizationService();
         showSuccessInfo("Login successfully");
         authorizationService.storeUserInfo({...response.data, password});
         navigate("/")
