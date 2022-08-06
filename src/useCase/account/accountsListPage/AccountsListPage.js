@@ -1,37 +1,28 @@
 import React from "react";
 
 import PageCmp from "../../../component/PageCmp";
-import useGetAccountsRequest from "./hook/useGetAccountsRequest";
 import {Table, Tbody, Td, Th, Thead, Tr} from "../../../configuration/styledComponents/Table";
 import AccountRoleConverter from "../../../service/converter/accountRoleConverter";
 import DateConverter from "../../../service/converter/dateConverter";
-import useSortingHook from "../../../hooks/useSortingHook";
-import GetRequestService from "../../../service/http/getRequestService";
+import GetRequestService, {useSortingHook} from "../../../service/http/getRequestService";
 
 const AccountsListPage = () => {
     const getRequestService = new GetRequestService();
+    const sorting = useSortingHook();
+    const {objects:accounts, setSortingField} = getRequestService.getObjectsArray("/api/accounts");
 
-
-    const {sort, setField, toggleAsc} = useSortingHook();
-    const accounts = getRequestService.getObjectsArray("/api/accounts",sort);
-
-
-    function sortByField(fieldName) {
-        setField(fieldName);
-        toggleAsc();
-    }
 
     return <PageCmp title="Accounts list">
         <Table>
             <Thead>
                 <Tr>
-                    <Th onClick={() => sortByField("id")}>Id:</Th>
-                    <Th onClick={() => sortByField("username")}>Username:</Th>
-                    <Th onClick={() => sortByField("email")}>Email:</Th>
-                    <Th onClick={() => sortByField("accountRole")}>Role:</Th>
+                    <Th onClick={() => setSortingField("id")}>Id:</Th>
+                    <Th onClick={() => setSortingField("username")}>Username:</Th>
+                    <Th onClick={() => setSortingField("email")}>Email:</Th>
+                    <Th onClick={() => setSortingField("accountRole")}>Role:</Th>
                     <Th>Admin confirm:</Th>
                     <Th>Email confirm:</Th>
-                    <Th onClick={() => sortByField("creationTimestamp")}>Creation date:</Th>
+                    <Th onClick={() => setSortingField("creationTimestamp")}>Creation date:</Th>
                 </Tr>
             </Thead>
             <Tbody>

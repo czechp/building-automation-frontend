@@ -7,7 +7,7 @@ import FormCmp from "../../../component/FormCmp";
 import TextInputCmp from "../../../component/TextInputCmp";
 import ButtonCmp from "../../../component/ButtonCmp";
 import {StatementContext} from "../../../App";
-import {fieldsValidator} from "../../../service/validator/fieldsValidator";
+import {FieldsValidator} from "../../../service/validator/fieldsValidator";
 import SendRequestService from "../../../service/http/sendRequestService";
 import AuthorizationService from "../../../service/authorization/authorizationService";
 import httpErrorHandler from "../../../service/http/httpErrorHandler";
@@ -21,6 +21,7 @@ const LoginPage = () => {
     const {showErrorInfo, showSuccessInfo} = React.useContext(StatementContext);
     const navigate = useNavigate();
 
+    const fieldsValidator = new FieldsValidator();
 
     function validateFields() {
         return [username, password].every(f => fieldsValidator.minimumLength(f, MINIMUM_FIELDS_LENGTH));
