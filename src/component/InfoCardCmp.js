@@ -20,7 +20,7 @@ const Container = styled.div`
   border: 2px solid ${({theme}) => theme.colors.primary};
   border-radius: 10px;
   padding: 20px;
-
+  margin-bottom: 50px;
 `;
 
 const RowContainer = styled.div`
