@@ -5,6 +5,7 @@ import {Table, Tbody, Td, Th, Thead, Tr} from "../../../configuration/styledComp
 import AccountRoleConverter from "../../../service/converter/accountRoleConverter";
 import DateConverter from "../../../service/converter/dateConverter";
 import GetRequestService, {useSortingHook} from "../../../service/http/getRequestService";
+import {useNavigate} from "react-router-dom";
 
 const AccountsListPage = () => {
     const getRequestService = new GetRequestService();
@@ -36,10 +37,15 @@ const AccountsListPage = () => {
 
 
 const AccountRow = ({account, id}) => {
+    const navigate = useNavigate();
     const accountRoleConverter = new AccountRoleConverter();
     const dateConverter = new DateConverter();
 
-    return <Tr key={`${account.id}-${id}`}>
+    function accountRowOnClick(accountId) {
+        navigate("/account-details", {state: accountId});
+    }
+
+    return <Tr key={`${account.id}-${id}`} onClick={() => accountRowOnClick(account.id)}>
         <Td key={`id-${account.id}-${id}`}>{account.id}</Td>
         <Td key={`username-${account.id}-${id}`}>{account.username}</Td>
         <Td key={`email-${account.id}-${id}`}>{account.email}</Td>
