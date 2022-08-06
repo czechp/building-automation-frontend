@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 import colors from "../configuration/style/colors";
+import LoadingSpinnerCmp from "./LoadingSpinnerCmp";
 
-const PageCmp = ({title, children}) => {
+const PageCmp = ({title, children, loaded = true}) => {
     return <Container>
         <Title>{title}</Title>
         <hr width="30%" align="left" color={colors.primary}/>
-            <Content>{children}</Content>
+        {loaded ? <Content>{children}</Content>: <LoadingSpinnerCmp />}
     </Container>
 
 }
