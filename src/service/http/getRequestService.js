@@ -9,7 +9,9 @@ const NO_SORTING = "NO_SORTING";
 function GetRequestService() {
     this._statementHandler = React.useContext(StatementContext);
     this._sendRequestService = new SendRequestService();
+
     this.getObjectsArray = useGetObjectsArray;
+    this.getObject = useGetObject;
 
     return this;
 };
@@ -47,6 +49,18 @@ function createSortingParams({field, asc}) {
         return paramsArray;
     } else
         return [];
+}
+
+function useGetObject(endpoint, params = []) {
+    const [object, setObject] = React.useState();
+
+    React.useEffect(() => {
+        this._sendRequestService.get(endpoint, params)
+            .then((response) => setObject(response.data))
+            .catch((error) => this._statementHandler.showErrorInfo(httpErrorHandler(error)));
+    }, []);
+
+    return object;
 }
 
 export default GetRequestService;
