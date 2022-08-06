@@ -3,7 +3,7 @@ import InfoCardCmp from "../../../../component/InfoCardCmp";
 import AccountRoleConverter from "../../../../service/converter/accountRoleConverter";
 import DateConverter from "../../../../service/converter/dateConverter";
 
-const AccountDetailsInfo = ({account}) => {
+const AccountDetailsInfoCmp = ({account}) => {
     const accountRoleConverter = new AccountRoleConverter();
     const dateConverter = new DateConverter();
 
@@ -23,4 +23,4 @@ const Container = styled.div`
   width: 100%;
 `;
 
-export default AccountDetailsInfo;
+export default AccountDetailsInfoCmp;
