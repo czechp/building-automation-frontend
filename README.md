@@ -35,9 +35,9 @@
 - [x] display URL to account activation (only development mode)
 
 ### Accounts
-- [ ] admin guard,
-- [ ] access denied page,
-- [ ] account list page,
+- [x] admin guard,
+- [x] access denied page,
+- [x] account list page,
 - [ ] account details page,
 - [ ] delete account,
 - [ ] confirm by admin,
