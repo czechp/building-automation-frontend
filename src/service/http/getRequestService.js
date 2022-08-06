@@ -16,9 +16,10 @@ function GetRequestService() {
     return this;
 };
 
-function useGetObjectsArray(endpoint, params = []) {
-    const [objects, setObjects] = React.useState([]);
+function useGetObjectsArray(endpoint, paramsToSet = []) {
+    const [objects, setObjects] = React.useState(null);
     const {sorting, setSortingField} = useSortingHook();
+    const params = useProvideParams(paramsToSet);
 
     React.useEffect(
         () => {
@@ -28,9 +29,22 @@ function useGetObjectsArray(endpoint, params = []) {
                 .then((response) => setObjects(response.data))
                 .catch((error) => this._statementHandler.showErrorInfo(httpErrorHandler(error)));
         }
-        , [sorting]);
+        , [sorting, endpoint, params]);
 
     return {objects, setSortingField};
+}
+
+function useGetObject(endpoint, paramsToSet = []) {
+    const [object, setObject] = React.useState();
+    const params = useProvideParams(paramsToSet);
+
+    React.useEffect(() => {
+        this._sendRequestService.get(endpoint, params)
+            .then((response) => setObject(response.data))
+            .catch((error) => this._statementHandler.showErrorInfo(httpErrorHandler(error)));
+    }, [endpoint, params]);
+
+    return object;
 }
 
 export const useSortingHook = (field = NO_SORTING, asc = true) => {
@@ -51,16 +65,14 @@ function createSortingParams({field, asc}) {
         return [];
 }
 
-function useGetObject(endpoint, params = []) {
-    const [object, setObject] = React.useState();
-
+function useProvideParams(paramsToSet) {
+    const [params, setParams] = React.useState([]);
     React.useEffect(() => {
-        this._sendRequestService.get(endpoint, params)
-            .then((response) => setObject(response.data))
-            .catch((error) => this._statementHandler.showErrorInfo(httpErrorHandler(error)));
-    }, []);
-
-    return object;
+        if (params.length > 0)
+            setParams(paramsToSet)
+    }, [params, paramsToSet]);
+    return params;
 }
+
 
 export default GetRequestService;

@@ -10,28 +10,29 @@ import {useNavigate} from "react-router-dom";
 const AccountsListPage = () => {
     const getRequestService = new GetRequestService();
     const sorting = useSortingHook();
-    const {objects:accounts, setSortingField} = getRequestService.getObjectsArray("/api/accounts");
+    const {objects: accounts, setSortingField} = getRequestService.getObjectsArray("/api/accounts");
 
-
-    return <PageCmp title="Accounts list">
-        <Table>
-            <Thead>
-                <Tr>
-                    <Th onClick={() => setSortingField("id")}>Id:</Th>
-                    <Th onClick={() => setSortingField("username")}>Username:</Th>
-                    <Th onClick={() => setSortingField("email")}>Email:</Th>
-                    <Th onClick={() => setSortingField("accountRole")}>Role:</Th>
-                    <Th>Admin confirm:</Th>
-                    <Th>Email confirm:</Th>
-                    <Th onClick={() => setSortingField("creationTimestamp")}>Creation date:</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-            {
-                accounts.map((a,id)=><AccountRow key={`row-${a.id}-${id}`} account={a} id={id} />)
-            }
-            </Tbody>
-        </Table>
+    return <PageCmp title="Accounts list" loaded={accounts}>
+        {
+            accounts && <Table>
+                <Thead>
+                    <Tr>
+                        <Th onClick={() => setSortingField("id")}>Id:</Th>
+                        <Th onClick={() => setSortingField("username")}>Username:</Th>
+                        <Th onClick={() => setSortingField("email")}>Email:</Th>
+                        <Th onClick={() => setSortingField("accountRole")}>Role:</Th>
+                        <Th>Admin confirm:</Th>
+                        <Th>Email confirm:</Th>
+                        <Th onClick={() => setSortingField("creationTimestamp")}>Creation date:</Th>
+                    </Tr>
+                </Thead>
+                <Tbody>
+                    {
+                        accounts.map((a, id) => <AccountRow key={`row-${a.id}-${id}`} account={a} id={id}/>)
+                    }
+                </Tbody>
+            </Table>
+        }
     </PageCmp>
 }
 
