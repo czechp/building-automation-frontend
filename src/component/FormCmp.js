@@ -16,7 +16,7 @@ const Container = styled.div`
 
 const Header = styled.h3`
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 `
 
 export default FormCmp;
