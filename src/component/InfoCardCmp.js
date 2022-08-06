@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import SeparatorCmp from "./SeparatorCmp";
 
 const InfoCardCmp = ({data = []}) => {
     return <Container>
@@ -13,12 +12,15 @@ const InfoCardRow = ({row = {style: {}}, index}) => {
             <RowText>{row.label}</RowText>
             <RowText>{row.value}</RowText>
         </RowWrapper>
-        <SeparatorCmp/>
     </RowContainer>
 }
 
 const Container = styled.div`
   width: 100%;
+  border: 2px solid ${({theme}) => theme.colors.primary};
+  border-radius: 10px;
+  padding: 20px;
+
 `;
 
 const RowContainer = styled.div`
@@ -31,6 +33,9 @@ const RowWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: smaller;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
   &:hover {
     color: ${({theme}) => theme.colors.secondary}
   }
