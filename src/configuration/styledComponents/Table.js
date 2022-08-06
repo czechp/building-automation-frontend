@@ -21,7 +21,7 @@ export const Th = styled.th`
   border-top: 2px solid ${({theme}) => theme.colors.primary};
   font-size: smaller;
   &:hover{
-    background-color: ${({theme}) => theme.colors.white};
+    background-color: ${({theme}) => theme.colors.faded};
     color: ${({theme}) => theme.colors.primary};
     cursor: pointer;
   }

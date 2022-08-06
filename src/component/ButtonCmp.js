@@ -30,7 +30,7 @@ const Button = styled.button`
 
   &:hover {
     cursor: pointer;
-    color: ${({theme}) => theme.colors["white"]};
+    color: ${({theme}) => theme.colors["faded"]};
     background-color: ${({color, theme}) => theme.colors[color]};
 
   }
