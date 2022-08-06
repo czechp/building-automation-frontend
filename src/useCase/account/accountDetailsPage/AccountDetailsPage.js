@@ -4,6 +4,7 @@ import PageCmp from "../../../component/PageCmp";
 import GetRequestService from "../../../service/http/getRequestService";
 import AccountDetailsInfoCmp from "./component/AccountDetailsInfoCmp";
 import AccountAdminActivationCmp from "./component/AccountAdminActivationCmp";
+import AccountChangeRoleCmp from "./component/AccountChangeRoleCmp";
 
 const AccountDetailsPage = () => {
     const ACCOUNT_DETAILS_ENDPOINT = "/api/accounts";
@@ -19,6 +20,7 @@ const AccountDetailsPage = () => {
             account && <>
                 <AccountDetailsInfoCmp account={account}/>
                 <AccountAdminActivationCmp accountId={account.id} reloadAccount={reloadAccount}/>
+                <AccountChangeRoleCmp account={account} />
             </>
         }
     </PageCmp>
