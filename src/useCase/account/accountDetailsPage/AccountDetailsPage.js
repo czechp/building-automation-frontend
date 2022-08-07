@@ -5,6 +5,7 @@ import GetRequestService from "../../../service/http/getRequestService";
 import AccountDetailsInfoCmp from "./component/AccountDetailsInfoCmp";
 import AccountAdminActivationCmp from "./component/AccountAdminActivationCmp";
 import AccountChangeRoleCmp from "./component/AccountChangeRoleCmp";
+import AccountDeleteCmp from "./component/AccountDeleteCmp";
 
 const AccountDetailsPage = () => {
     const ACCOUNT_DETAILS_ENDPOINT = "/api/accounts";
