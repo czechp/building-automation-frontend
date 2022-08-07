@@ -20,7 +20,7 @@ const AccountDetailsPage = () => {
             account && <>
                 <AccountDetailsInfoCmp account={account}/>
                 <AccountAdminActivationCmp accountId={account.id} reloadAccount={reloadAccount}/>
-                <AccountChangeRoleCmp account={account} />
+                <AccountChangeRoleCmp account={account} reloadAccount={reloadAccount} />
             </>
         }
     </PageCmp>
