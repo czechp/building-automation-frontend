@@ -22,6 +22,7 @@ const AccountDetailsPage = () => {
                 <AccountDetailsInfoCmp account={account}/>
                 <AccountAdminActivationCmp accountId={account.id} reloadAccount={reloadAccount}/>
                 <AccountChangeRoleCmp account={account} reloadAccount={reloadAccount} />
+                <AccountDeleteCmp accountId={account.id}/>
             </>
         }
     </PageCmp>
