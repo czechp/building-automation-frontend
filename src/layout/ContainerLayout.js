@@ -12,7 +12,7 @@ export const StickyTopContainer = styled.div`
   position: sticky;
   top: 0;
   background-color: ${({theme})=>theme.colors.background};
-
+  z-index: 5;
 `
 
 const Container = styled.div`
