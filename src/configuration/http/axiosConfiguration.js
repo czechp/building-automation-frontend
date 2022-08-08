@@ -1,8 +1,9 @@
 import axios from "axios";
 import {BACKEND_URL} from "../../constant/URL";
-import authorizationService from "../../service/authorization/authorizationService";
+import AuthorizationService from "../../service/authorization/authorizationService";
 
 function addAuthorizationHeader(axiosInstance) {
+    const authorizationService = new AuthorizationService();
     axiosInstance.interceptors.request.use(function (config) {
         const {authorizationHeader} = authorizationService.getUserInfo();
         if (authorizationHeader)

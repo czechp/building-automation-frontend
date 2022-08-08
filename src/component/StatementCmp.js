@@ -31,7 +31,7 @@ const StatementCmp = () => {
 
     return <>
         {visibility && <Container color={color}>
-            <FontAwesomeIcon icon={icon} color={color} size={"5x"} style={{marginRight: "50px"}} />
+            <FontAwesomeIcon icon={icon} color={color} size={"5x"} style={{marginRight: "50px"}}/>
             <FontAwesomeIcon icon={faXmark} style={xMarkStyle} size={"2x"} onClick={closeStatement}/>
             <TextContainer>{text}</TextContainer>
         </Container>}

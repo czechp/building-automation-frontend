@@ -7,7 +7,7 @@ import FormCmp from "../../../component/FormCmp";
 import TextInputCmp from "../../../component/TextInputCmp";
 import ButtonCmp from "../../../component/ButtonCmp";
 import {StatementContext} from "../../../App";
-import sendRequestService from "../../../service/http/sendRequestService";
+import SendRequestService from "../../../service/http/sendRequestService";
 import httpErrorHandler from "../../../service/http/httpErrorHandler";
 import useRegisterFormField from "./forms/useRegisterPageFieldsProvider";
 import registerPageValidator from "./validator/registerPageValidator";
@@ -27,12 +27,15 @@ const RegisterPage = () => {
     }
 
     function sendRegisterRequest() {
+        const sendRequestService = new SendRequestService();
+
         const requestBody = {
             username: formFields.username,
             email: formFields.email,
             password: formFields.password,
             passwordConfirm: formFields.passwordConfirm
         };
+
         sendRequestService.post(REGISTER_ENDPOINT, requestBody)
             .then((response) => registerSuccess(response.data))
             .catch((error) => showErrorInfo(httpErrorHandler(error)));
@@ -49,7 +52,7 @@ const RegisterPage = () => {
     }
 
     return <PageCmp title="Register">
-        <FormCmp title="Register">
+        <FormCmp>
             <TextInputCmp label={"Username:"} value={formFields.username} onChange={formFields.setUsername}
                           minLength={3} placeholder="Type username"/>
             <TextInputCmp label={"Email:"} value={formFields.email} onChange={formFields.setEmail} minLength={3}

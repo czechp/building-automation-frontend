@@ -1,8 +1,9 @@
 import {Navigate} from "react-router-dom";
 
-import authorizationService from "../service/authorization/authorizationService";
+import AuthorizationService from "../service/authorization/authorizationService";
 
 const LoginGuard = ({children}) => {
+    const authorizationService = new AuthorizationService();
     return authorizationService.isLogged() ? children : <Navigate to="/not-logged"/>
 }
 

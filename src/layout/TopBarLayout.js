@@ -15,7 +15,7 @@ const TopBarLayout = () => {
                     <LogoSubheader>Building <br/>Automation</LogoSubheader>
                 </Logo>
             </LogoContainer>
-            <LoginInfoCmp />
+            <LoginInfoCmp/>
         </Container>
         <SeparatorCmp/>
     </>
@@ -27,6 +27,7 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 150px;
+
 `
 
 const LogoContainer = styled.div`

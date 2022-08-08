@@ -1,16 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-
 import colors from "../configuration/style/colors";
-import StatementCmp from "./StatementCmp";
+import LoadingSpinnerCmp from "./LoadingSpinnerCmp";
 
-
-const PageCmp = ({title, children}) => {
+const PageCmp = ({title, children, loaded = true}) => {
     return <Container>
         <Title>{title}</Title>
         <hr width="30%" align="left" color={colors.primary}/>
-            <Content>{children}</Content>
+        {loaded ? <Content>{children}</Content> : <LoadingSpinnerCmp/>}
     </Container>
 
 }
@@ -20,6 +18,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 `
 
 const Title = styled.h2`
@@ -33,7 +32,7 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 60%;
+  width: 1300px;
 `
 
 

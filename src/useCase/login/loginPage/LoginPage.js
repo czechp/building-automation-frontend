@@ -1,17 +1,16 @@
 import React from "react";
-import styled from "styled-components";
 import {useNavigate} from "react-router-dom";
 
 
-import PageCmp from "../../component/PageCmp";
-import FormCmp from "../../component/FormCmp";
-import TextInputCmp from "../../component/TextInputCmp";
-import ButtonCmp from "../../component/ButtonCmp";
-import {StatementContext} from "../../App";
-import {fieldsValidator} from "../../service/validator/fieldsValidator";
-import sendRequestService from "../../service/http/sendRequestService";
-import authorizationService from "../../service/authorization/authorizationService";
-import httpErrorHandler from "../../service/http/httpErrorHandler";
+import PageCmp from "../../../component/PageCmp";
+import FormCmp from "../../../component/FormCmp";
+import TextInputCmp from "../../../component/TextInputCmp";
+import ButtonCmp from "../../../component/ButtonCmp";
+import {StatementContext} from "../../../App";
+import {FieldsValidator} from "../../../service/validator/fieldsValidator";
+import SendRequestService from "../../../service/http/sendRequestService";
+import AuthorizationService from "../../../service/authorization/authorizationService";
+import httpErrorHandler from "../../../service/http/httpErrorHandler";
 
 const LoginPage = () => {
     const MINIMUM_FIELDS_LENGTH = 3;
@@ -22,18 +21,21 @@ const LoginPage = () => {
     const {showErrorInfo, showSuccessInfo} = React.useContext(StatementContext);
     const navigate = useNavigate();
 
+    const fieldsValidator = new FieldsValidator();
 
     function validateFields() {
         return [username, password].every(f => fieldsValidator.minimumLength(f, MINIMUM_FIELDS_LENGTH));
     }
 
     function loginSuccessfully(response) {
+        const authorizationService = new AuthorizationService();
         showSuccessInfo("Login successfully");
         authorizationService.storeUserInfo({...response.data, password});
         navigate("/")
     }
 
     function sendAuthorizeRequest() {
+        const sendRequestService = new SendRequestService();
         sendRequestService.post(LOGIN_ENDPOINT, {username, password})
             .then((response) => loginSuccessfully(response))
             .catch((error) => showErrorInfo(httpErrorHandler(error)));
@@ -49,7 +51,7 @@ const LoginPage = () => {
         navigate("/register");
     }
 
-    function activateAccountBtnClick(){
+    function activateAccountBtnClick() {
         navigate("/activate-account");
     }
 
@@ -66,8 +68,5 @@ const LoginPage = () => {
     </PageCmp>
 }
 
-const RegisterInfo = styled.p`
-    font-style: italic;
-`
 
 export default LoginPage;

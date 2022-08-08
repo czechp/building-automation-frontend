@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
+import colors from "../configuration/style/colors";
+
 const ButtonCmp = ({
                        label,
-                       color = "primary",
+                       color = colors.primary,
                        width = 100,
-                        style = {},
+                       style = {},
                        onClick = () => console.log("Button without assigned onClick")
                    }
 ) => {
@@ -19,9 +21,9 @@ const ButtonCmp = ({
 
 const Button = styled.button`
   background-color: transparent;
-  border: 2px solid ${({color, theme}) => theme.colors[color]};
+  border: 2px solid ${({color}) => color};
   width: ${({width}) => `${width}%`};
-  color: ${({color, theme}) => theme.colors[color]};
+  color: ${({color}) => color};
   font-size: 20px;
   border-radius: 10px;
   height: 40px;
@@ -30,8 +32,8 @@ const Button = styled.button`
 
   &:hover {
     cursor: pointer;
-    color: ${({theme}) => theme.colors["white"]};
-    background-color: ${({color, theme}) => theme.colors[color]};
+    color: ${({theme}) => theme.colors["faded"]};
+    background-color: ${({color}) => color};
 
   }
 `

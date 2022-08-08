@@ -1,4 +1,6 @@
-import {fieldsValidator} from "../../../../service/validator/fieldsValidator";
+import {FieldsValidator} from "../../../../service/validator/fieldsValidator";
+
+const fieldsValidator = new FieldsValidator();
 
 function registerPageValidator(fields) {
     const validators = [];

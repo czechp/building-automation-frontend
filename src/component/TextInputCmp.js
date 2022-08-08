@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const TextInputCmp = ({label, placeholder="", value, onChange, minLength, type="text"}) => {
+const TextInputCmp = ({label, placeholder = "", value, onChange, minLength, type = "text"}) => {
     const showMinLength = minLength && value.length < minLength;
 
     function textOnChange(event) {

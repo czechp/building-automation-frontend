@@ -9,7 +9,7 @@ import ButtonCmp from "../../../component/ButtonCmp";
 import activationCodeFieldValidator from "./validator/activationCodeFieldValidator";
 import {StatementContext} from "../../../App";
 import UUID_LENGTH from "../../../constant/UUID";
-import sendRequestService from "../../../service/http/sendRequestService";
+import SendRequestService from "../../../service/http/sendRequestService";
 import httpErrorHandler from "../../../service/http/httpErrorHandler";
 
 const ActivateAccountPage = () => {
@@ -39,11 +39,12 @@ const ActivationForm = ({activationCode: myActivationCode}) => {
     const {showErrorInfo, showSuccessInfo} = React.useContext(StatementContext);
 
     function activationSuccess() {
-         showSuccessInfo("Account activation success. Now wait for admin confirmation.");
-         navigate("/login");
+        showSuccessInfo("Account activation success. Now wait for admin confirmation.");
+        navigate("/login");
     }
 
     function sendActivationRequest() {
+        const sendRequestService = new SendRequestService();
         sendRequestService.patch(ACTIVATION_ENDPOINT, {}, [{token: activationCode}])
             .then((response) => activationSuccess())
             .catch((error) => showErrorInfo(httpErrorHandler(error)));
