@@ -5,6 +5,7 @@ function SendRequestService() {
     this.get = (endpoint, params = []) => this._axios.get(endpoint, createConfig(params));
     this.post = (endpoint, body = {}, params = []) => this._axios.post(endpoint, body, createConfig(params));
     this.patch = (endpoint, body = {}, params = []) => this._axios.patch(endpoint, body, createConfig(params));
+    this.delete = (endpoint, params = []) => this._axios.delete(endpoint, createConfig(params));
 }
 
 
