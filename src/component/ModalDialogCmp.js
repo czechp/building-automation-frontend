@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faXmark} from "@fortawesome/free-solid-svg-icons";
 import colors from "../configuration/style/colors";
+import ButtonCmp from "./ButtonCmp";
 
 const ModalDialogCmp = ({title, children, handler}) => {
     const [scrollPosition, setScrollPosition] = React.useState(0);
@@ -33,6 +34,7 @@ const ModalDialogCmp = ({title, children, handler}) => {
                     <Content>
                         {children}
                     </Content>
+                    <ButtonCmp label="Cancel" onClick={closeBtnOnClick} color={colors.danger}/>
                 </ModalDialog>
             </Container>
         }
