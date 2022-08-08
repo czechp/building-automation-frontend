@@ -15,7 +15,7 @@ const TopBarLayout = () => {
                     <LogoSubheader>Building <br/>Automation</LogoSubheader>
                 </Logo>
             </LogoContainer>
-            <LoginInfoCmp />
+            <LoginInfoCmp/>
         </Container>
         <SeparatorCmp/>
     </>

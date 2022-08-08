@@ -39,8 +39,8 @@ const ActivationForm = ({activationCode: myActivationCode}) => {
     const {showErrorInfo, showSuccessInfo} = React.useContext(StatementContext);
 
     function activationSuccess() {
-         showSuccessInfo("Account activation success. Now wait for admin confirmation.");
-         navigate("/login");
+        showSuccessInfo("Account activation success. Now wait for admin confirmation.");
+        navigate("/login");
     }
 
     function sendActivationRequest() {

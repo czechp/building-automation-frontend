@@ -3,7 +3,7 @@ import styled from "styled-components";
 import PageCmp from "./PageCmp";
 import colors from "../configuration/style/colors";
 
-const InfoPageCmp = ({title, children, error=false}) => {
+const InfoPageCmp = ({title, children, error = false}) => {
     const color = error ? colors.danger : colors.success;
 
     return <PageCmp title={title}>

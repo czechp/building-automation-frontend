@@ -14,7 +14,7 @@ const ModalDialogCmp = ({title, children, handler}) => {
     }
 
     React.useEffect(() => {
-        if (handler.visibility){
+        if (handler.visibility) {
             setScrollPosition(document.documentElement.scrollTop);
             window.scroll(0, 0);
         }

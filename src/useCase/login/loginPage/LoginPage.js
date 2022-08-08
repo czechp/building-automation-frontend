@@ -51,7 +51,7 @@ const LoginPage = () => {
         navigate("/register");
     }
 
-    function activateAccountBtnClick(){
+    function activateAccountBtnClick() {
         navigate("/activate-account");
     }
 

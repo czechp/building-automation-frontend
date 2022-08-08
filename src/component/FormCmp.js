@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const FormCmp = ({title, children})=>{
-    return <Container >
+const FormCmp = ({title, children}) => {
+    return <Container>
         {title && <Header>{title}</Header>}
         {children}
     </Container>

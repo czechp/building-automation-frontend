@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const SeparatorCmp = () => {
-    return <Separator />
+    return <Separator/>
 }
 
 const Separator = styled.hr`

@@ -12,7 +12,7 @@ const NavigationBarLayout = () => {
         <Container>
             <ButtonCmp width={20} label={"Locations"} onClick={() => navigate("/")}/>
             <ButtonCmp width={20} label={"Devices"}/>
-            <ButtonCmp width={20} label={"Accounts"} onClick={()=>navigate("/accounts")}/>
+            <ButtonCmp width={20} label={"Accounts"} onClick={() => navigate("/accounts")}/>
         </Container>
         <SeparatorCmp/>
     </>
@@ -24,7 +24,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: ${({theme})=>theme.colors.background};
+  background-color: ${({theme}) => theme.colors.background};
 `
 
 export default NavigationBarLayout;

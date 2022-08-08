@@ -8,7 +8,7 @@ const PageCmp = ({title, children, loaded = true}) => {
     return <Container>
         <Title>{title}</Title>
         <hr width="30%" align="left" color={colors.primary}/>
-        {loaded ? <Content>{children}</Content>: <LoadingSpinnerCmp />}
+        {loaded ? <Content>{children}</Content> : <LoadingSpinnerCmp/>}
     </Container>
 
 }

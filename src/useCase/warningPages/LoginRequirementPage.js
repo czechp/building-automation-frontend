@@ -9,7 +9,7 @@ const LoginRequirementPage = () => {
 
     return <InfoPageCmp title="Access denied" error={true}>
         <Text> In order to get access this page have to login in.</Text>
-        <ButtonCmp label="Login" width={"50"} onClick={()=>navigate("/login")}/>
+        <ButtonCmp label="Login" width={"50"} onClick={() => navigate("/login")}/>
     </InfoPageCmp>
 }
 

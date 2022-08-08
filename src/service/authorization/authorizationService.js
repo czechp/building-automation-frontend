@@ -1,4 +1,3 @@
-import storageService from "../storage/storageService";
 import StorageService from "../storage/storageService";
 
 const ID = "id";

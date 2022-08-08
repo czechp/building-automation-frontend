@@ -6,7 +6,7 @@ const ButtonCmp = ({
                        label,
                        color = colors.primary,
                        width = 100,
-                        style = {},
+                       style = {},
                        onClick = () => console.log("Button without assigned onClick")
                    }
 ) => {
