@@ -43,6 +43,12 @@
 - [x] admin guard,
 - [x] access denied page,
 - [x] account list page,
-- [ ] account details page,
-- [ ] delete account,
-- [ ] confirm by admin,
+- [x] account details page,
+- [x] delete account,
+- [x] confirm by admin,
+
+### Locations
+
+- [ ] page (routing to ""/locations"),
+- [ ] locations list and add,
+- [ ] location details and remove (in common page ""/location-details")
