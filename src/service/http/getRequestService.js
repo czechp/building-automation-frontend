@@ -20,6 +20,7 @@ function useGetObjectsArray(endpoint, paramsToSet = []) {
     const [objects, setObjects] = React.useState(null);
     const {sorting, setSortingField} = useSortingHook();
     const params = useProvideParams(paramsToSet);
+    const {reload, reloadRequest} = useProvideReload();
 
     React.useEffect(
         () => {
@@ -29,15 +30,16 @@ function useGetObjectsArray(endpoint, paramsToSet = []) {
                 .then((response) => setObjects(response.data))
                 .catch((error) => this._statementHandler.showErrorInfo(httpErrorHandler(error)));
         }
-        , [sorting, endpoint, params]);
+        , [sorting, endpoint, params, reload]);
 
-    return {objects, setSortingField};
+    return {objects, setSortingField, reloadRequest};
 }
 
 function useGetObject(endpoint, paramsToSet = []) {
     const [object, setObject] = React.useState();
-    const [reload, setReload] = React.useState(false);
     const params = useProvideParams(paramsToSet);
+    const {reload, reloadRequest} = useProvideReload();
+
 
 
     React.useEffect(() => {
@@ -48,7 +50,7 @@ function useGetObject(endpoint, paramsToSet = []) {
 
     return {
         object,
-        reloadObject: () => setReload((prev) => !prev)
+        reloadRequest
     };
 }
 
@@ -77,6 +79,14 @@ function useProvideParams(paramsToSet) {
             setParams(paramsToSet)
     }, [params, paramsToSet]);
     return params;
+}
+
+function useProvideReload() {
+    const [reload, setReload] = React.useState(false);
+    return {
+        reload,
+        reloadRequest: () => setReload((prevState) => !prevState)
+    }
 }
 
 
