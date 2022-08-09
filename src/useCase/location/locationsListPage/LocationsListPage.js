@@ -3,7 +3,7 @@ import GetRequestService from "../../../service/http/getRequestService";
 import LocationsListCmp from "./component/LocationsListCmp";
 import LocationAddCmp from "./component/LocationAddCmp";
 
-const LocationListPage = () => {
+const LocationsListPage = () => {
     const LOCATIONS_ENDPOINT = "/api/locations/account";
     const getRequestService = new GetRequestService();
     const {objects: locations, setSortingField, reloadRequest} = getRequestService.getObjectsArray(LOCATIONS_ENDPOINT);
@@ -19,5 +19,5 @@ const LocationListPage = () => {
     </PageCmp>
 }
 
-export default LocationListPage;
+export default LocationsListPage;
 
