@@ -63,14 +63,12 @@ const ModalDialog = styled.div`
   border: 2px solid ${({theme}) => theme.colors.primary};
   border-radius: 20px;
   padding: 20px;
-  min-height: 200px;
 `
 
 const Header = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 50px;
 `;
 
 const TitleWrapper = styled.div`
@@ -90,7 +88,7 @@ const CloseButton = styled.div`
 const Content = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 `;
 
 export function useModalDialog() {

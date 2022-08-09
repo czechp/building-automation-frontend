@@ -7,7 +7,7 @@ import GlobalStyles from "./configuration/style/globalStyles";
 import ContainerLayout, {StickyTopContainer} from "./layout/ContainerLayout";
 import TopBarLayout from "./layout/TopBarLayout";
 import NavigationBarLayout from "./layout/NavigationBarLayout";
-import LocationListPage from "./useCase/location/locationListPage/LocationListPage";
+import LocationsListPage from "./useCase/location/locationsListPage/LocationsListPage";
 import LoginPage from "./useCase/login/loginPage/LoginPage";
 import {createStatementContext, useProvideStatementValues} from "./context/useStatementContext";
 import LoginRequirementPage from "./useCase/warningPages/LoginRequirementPage";
@@ -19,6 +19,7 @@ import AdminRequirementPage from "./useCase/warningPages/AdminRequirementPage";
 import AdminGuard from "./guard/AdminGuard";
 import AccountsListPage from "./useCase/account/accountsListPage/AccountsListPage";
 import AccountDetailsPage from "./useCase/account/accountDetailsPage/AccountDetailsPage";
+import LocationDetailsPage from "./useCase/location/locationDetailsPage/LocationDetailsPage";
 
 export const StatementContext = createStatementContext();
 
@@ -38,7 +39,8 @@ function App() {
                             <NavigationBarLayout/>
                         </StickyTopContainer>
                         <Routes>
-                            <Route path="/" element={<LoginGuard><LocationListPage/></LoginGuard>}/>
+                            <Route path="/" element={<LoginGuard><LocationsListPage/></LoginGuard>}/>
+                            <Route path="/location-details" element={<LoginGuard><LocationDetailsPage/></LoginGuard>}/>
                             <Route path="/login" element={<LoginPage/>}/>
                             <Route path="/register" element={<RegisterPage/>}/>
                             <Route path="/activate-account" element={<ActivateAccountPage/>}/>

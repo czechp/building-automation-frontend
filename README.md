@@ -7,7 +7,7 @@
 #### TopBarLayout
 
 - [x] component,
-- [ ] info about current logged user,
+- [x] info about current logged user,
 
 #### NavigationBarLayout
 
@@ -43,6 +43,13 @@
 - [x] admin guard,
 - [x] access denied page,
 - [x] account list page,
-- [ ] account details page,
-- [ ] delete account,
-- [ ] confirm by admin,
+- [x] account details page,
+- [x] delete account,
+- [x] confirm by admin,
+- [ ] restore password
+
+### Locations
+
+- [x] page (routing to ""/locations"),
+- [x] locations list and add,
+- [x] location details and remove (in common page ""/location-details")
