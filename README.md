@@ -52,4 +52,4 @@
 
 - [x] page (routing to ""/locations"),
 - [x] locations list and add,
-- [ ] location details and remove (in common page ""/location-details")
+- [x] location details and remove (in common page ""/location-details")
