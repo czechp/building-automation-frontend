@@ -13,15 +13,15 @@ const AccountDetailsPage = () => {
     const {state: accountId} = useLocation();
     const {
         object: account,
-        reloadObject: reloadAccount
+        reloadRequest
     } = getRequestService.getObject(`${ACCOUNT_DETAILS_ENDPOINT}/${accountId}`);
 
     return <PageCmp title="Account details" loaded={account}>
         {
             account && <>
                 <AccountDetailsInfoCmp account={account}/>
-                <AccountAdminActivationCmp accountId={account.id} reloadAccount={reloadAccount}/>
-                <AccountChangeRoleCmp account={account} reloadAccount={reloadAccount}/>
+                <AccountAdminActivationCmp accountId={account.id} reloadAccount={reloadRequest}/>
+                <AccountChangeRoleCmp account={account} reloadAccount={reloadRequest}/>
                 <AccountDeleteCmp accountId={account.id}/>
             </>
         }
