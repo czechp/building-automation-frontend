@@ -34,7 +34,7 @@ const LocationRow = ({location}) => {
     return <Tr>
         <Td>{location.id}</Td>
         <Td>{location.name}</Td>
-        <Td>{location.clientName}</Td>
+        <Td>{location.clientName || "Unassigned"}</Td>
         <Td>{dateConverter.toFullDateTime(location.creationTimestamp)}</Td>
     </Tr>
 }
