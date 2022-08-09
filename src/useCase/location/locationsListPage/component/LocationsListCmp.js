@@ -4,9 +4,11 @@ import styled from "styled-components";
 import {Table, Tbody, Td, Th, Thead, Tr} from "../../../../configuration/styledComponents/Table";
 import DateConverter from "../../../../service/converter/dateConverter";
 import InfoFrame from "../../../../configuration/styledComponents/InfoFrame";
+import {useNavigate} from "react-router-dom";
 
 
 const LocationsListCmp = ({locations, setSortingField}) => {
+
     return <Container>
         <Table>
             <Thead>
@@ -31,7 +33,13 @@ const LocationsListCmp = ({locations, setSortingField}) => {
 
 const LocationRow = ({location}) => {
     const dateConverter = new DateConverter();
-    return <Tr>
+    const navigate = useNavigate();
+
+    function locationRowOnClick() {
+        navigate("/location-details", {state: location.id});
+    }
+
+    return <Tr onClick={locationRowOnClick}>
         <Td>{location.id}</Td>
         <Td>{location.name}</Td>
         <Td>{location.clientName || "Unassigned"}</Td>
