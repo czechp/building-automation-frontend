@@ -42,7 +42,7 @@ const LocationRow = ({location}) => {
 const EmptyArrayStatement = ({locations}) => {
     return <>
         {
-            locations.length === 0 && <InfoFrame>Currently you have no locations <br/>Add a new.</InfoFrame>
+            locations.length === 0 && <InfoFrame>Currently you have no locations.<br/>Add a new.</InfoFrame>
         }
     </>
 }
