@@ -1,6 +1,7 @@
 import PageCmp from "../../../component/PageCmp";
 import GetRequestService from "../../../service/http/getRequestService";
 import SwitchDevicesListCmp from "./component/SwitchDevicesListCmp";
+import SwitchDeviceAddCmp from "./component/SwitchDeviceAddCmp";
 
 const SwitchDevicesListPage = () => {
     const SWITCH_DEVICE_ENDPOINT = "/api/switch-devices/account";
@@ -15,6 +16,8 @@ const SwitchDevicesListPage = () => {
     return <PageCmp title="Switch devices" loaded={switchDevices}>
         {
             switchDevices && <>
+                <SwitchDeviceAddCmp />
+
                 <SwitchDevicesListCmp switchDevices={switchDevices} setSortingField={setSortingField} />
             </>
         }
