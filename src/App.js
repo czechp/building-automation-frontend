@@ -21,6 +21,7 @@ import AccountsListPage from "./useCase/account/accountsListPage/AccountsListPag
 import AccountDetailsPage from "./useCase/account/accountDetailsPage/AccountDetailsPage";
 import LocationDetailsPage from "./useCase/location/locationDetailsPage/LocationDetailsPage";
 import SwitchDevicesListPage from "./useCase/switchDevice/switchDevicesListPage/SwitchDevicesListPage";
+import HomePage from "./useCase/home/HomePage";
 
 export const StatementContext = createStatementContext();
 
@@ -40,7 +41,8 @@ function App() {
                             <NavigationBarLayout/>
                         </StickyTopContainer>
                         <Routes>
-                            <Route path="/" element={<LoginGuard><LocationsListPage/></LoginGuard>}/>
+                            <Route path="/" element={<LoginGuard><HomePage/></LoginGuard>}/>
+                            <Route path="/locations" element={<LoginGuard><LocationsListPage/></LoginGuard>}/>
                             <Route path="/location-details" element={<LoginGuard><LocationDetailsPage/></LoginGuard>}/>
                             <Route path="/login" element={<LoginPage/>}/>
                             <Route path="/register" element={<RegisterPage/>}/>

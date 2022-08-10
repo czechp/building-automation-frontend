@@ -30,7 +30,7 @@ const LocationDeleteCmp = ({locationId}) => {
 
     function locationRemoved() {
         showSuccessInfo("Location removed");
-        navigate("/");
+        navigate("/locations");
     }
 
     return <FormCmp>
