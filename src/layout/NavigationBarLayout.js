@@ -11,7 +11,7 @@ const NavigationBarLayout = () => {
     return <>
         <Container>
             <ButtonCmp width={20} label={"Locations"} onClick={() => navigate("/")}/>
-            <ButtonCmp width={20} label={"Devices"}/>
+            <ButtonCmp width={20} label={"Switch devices"}/>
             <ButtonCmp width={20} label={"Accounts"} onClick={() => navigate("/accounts")}/>
         </Container>
         <SeparatorCmp/>
