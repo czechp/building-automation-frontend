@@ -13,12 +13,8 @@ import SendRequestService from "../../../../service/http/sendRequestService";
 import httpErrorHandler from "../../../../service/http/httpErrorHandler";
 
 const SwitchDeviceAddCmp = ({reload}) => {
-    const LOCATIONS_ENDPOINT = "/api/locations/account";
     const SWITCH_DEVICE_NAME_MIN_LENGTH = 2;
-    const getRequestService = new GetRequestService();
-    const {objects: locations} = getRequestService.getObjectsArray(LOCATIONS_ENDPOINT);
     const modalHandler = useModalDialog();
-    const locationSelectValue = useLocationSelectValue(locations);
     const [selectedLocationId, setSelectedLocationId] = React.useState(0);
     const [newSwitchDeviceName, setNewSwitchDeviceName] = React.useState("");
     const {showErrorInfo, showSuccessInfo} = React.useContext(StatementContext);
@@ -49,27 +45,32 @@ const SwitchDeviceAddCmp = ({reload}) => {
         reload();
     }
 
-    React.useEffect(() => {
-        if (locationSelectValue.length > 0)
-            setSelectedLocationId(locationSelectValue[0].value);
-    }, [locationSelectValue]);
-
-
     return <FormCmp>
         <ButtonCmp label="Add switch device" onClick={modalHandler.showModal}/>
         <ModalDialogCmp handler={modalHandler} title="Add new switch device">
             <TextInputCmp value={newSwitchDeviceName} onChange={setNewSwitchDeviceName} label={"Name:"}
                           minLength={SWITCH_DEVICE_NAME_MIN_LENGTH} placeholder="Type switch device name"/>
-            <SelectFieldCmp label="Select location:" value={selectedLocationId} options={locationSelectValue}
-                            onChange={setSelectedLocationId}/>
+            <LocationSelectInputCmp selectedLocationId={selectedLocationId} setSelectedLocationId={setSelectedLocationId} />
             <ButtonCmp label="Create" color={colors.success} onClick={createBtnOnClick}/>
         </ModalDialogCmp>
     </FormCmp>
 };
 
 
-const SelectLocationCmp = () => {
-    
+const LocationSelectInputCmp = ({selectedLocationId, setSelectedLocationId}) => {
+    const LOCATIONS_ENDPOINT = "/api/locations/account";
+    const getRequestService = new GetRequestService();
+    const {objects: locations} = getRequestService.getObjectsArray(LOCATIONS_ENDPOINT);
+    const locationSelectValue = useLocationSelectValue(locations);
+
+
+    React.useEffect(() => {
+        if (locationSelectValue.length > 0)
+            setSelectedLocationId(locationSelectValue[0].value);
+    }, [locationSelectValue]);
+
+    return <SelectFieldCmp label="Select location:" value={selectedLocationId} options={locationSelectValue}
+                           onChange={setSelectedLocationId}/>
 }
 
 function useLocationSelectValue(locations) {
