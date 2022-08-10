@@ -25,7 +25,6 @@ const SwitchDevicesListCmp = ({switchDevices, setSortingField}) => {
                     <Th onClick={() => setSortingField("expectedState")}>Expected state:</Th>
                     <Th onClick={() => setSortingField("state")}>Current state:</Th>
                     <Th onClick={() => setSortingField("deviceError")}>Device error:</Th>
-                    <Th onClick={() => setSortingField("creationTimestamp")}>Creation date:</Th>
                 </Tr>
             </Thead>
             <Tbody>
@@ -56,7 +55,6 @@ const SwitchDeviceRow = ({switchDevice}) => {
         <Td>{switchDeviceStateConverter(switchDevice.expectedState)}</Td>
         <Td>{switchDeviceStateConverter(switchDevice.state)}</Td>
         <Td>{switchDevice.deviceError ? "YES" : "NO"}</Td>
-        <Td>{dateConverter.toFullDateTime(switchDevice.creationTimestamp)}</Td>
     </TrDevice>
 }
 
