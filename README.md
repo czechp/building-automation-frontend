@@ -53,3 +53,10 @@
 - [x] page (routing to ""/locations"),
 - [x] locations list and add,
 - [x] location details and remove (in common page ""/location-details")
+
+### Switch devices
+- [ ] all switch devices page ("/switch-devices"),
+- [ ] add new switch device on the page with list,
+- [ ] switch device details ("/switch-device-details"),
+- [ ] remove switch device ("/switch-device-details"),
+- [ ] list of switch device in location details,
