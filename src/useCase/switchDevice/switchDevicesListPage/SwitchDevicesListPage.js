@@ -16,8 +16,7 @@ const SwitchDevicesListPage = () => {
     return <PageCmp title="Switch devices" loaded={switchDevices}>
         {
             switchDevices && <>
-                <SwitchDeviceAddCmp />
-
+                <SwitchDeviceAddCmp reload={reloadSwitchDevices} />
                 <SwitchDevicesListCmp switchDevices={switchDevices} setSortingField={setSortingField} />
             </>
         }
