@@ -58,6 +58,7 @@
 - [x] all switch devices page ("/switch-devices"),
 - [x] add new switch device on the page with list,
 - [x] switch device details ("/switch-device-details"),
-- [ ] remove switch device ("/switch-device-details"),
+- [x] error statement ("/switch-device-details"),
+- [x] remove switch device ("/switch-device-details"),
 - [ ] set new state for device ("/switch-device-details"),
 - [ ] list of switch device in location details,
