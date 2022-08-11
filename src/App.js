@@ -22,6 +22,7 @@ import AccountDetailsPage from "./useCase/account/accountDetailsPage/AccountDeta
 import LocationDetailsPage from "./useCase/location/locationDetailsPage/LocationDetailsPage";
 import SwitchDevicesListPage from "./useCase/switchDevice/switchDevicesListPage/SwitchDevicesListPage";
 import HomePage from "./useCase/home/HomePage";
+import SwitchDeviceDetailsPage from "./useCase/switchDevice/switchDeviceDetailsPage/SwitchDeviceDetailsPage";
 
 export const StatementContext = createStatementContext();
 
@@ -49,7 +50,9 @@ function App() {
                             <Route path="/activate-account" element={<ActivateAccountPage/>}/>
                             <Route path="/accounts" element={<AdminGuard><AccountsListPage/></AdminGuard>}/>
                             <Route path="/account-details" element={<AdminGuard><AccountDetailsPage/></AdminGuard>}/>
-                            <Route path="/switch-devices" element={<LoginGuard><SwitchDevicesListPage /></LoginGuard>} />
+                            <Route path="/switch-devices" element={<LoginGuard><SwitchDevicesListPage/></LoginGuard>}/>
+                            <Route path="/switch-device-details"
+                                   element={<LoginGuard><SwitchDeviceDetailsPage/></LoginGuard>}/>
                             <Route path="/not-logged" element={<LoginRequirementPage/>}/>
                             <Route path="/admin-access" element={<AdminRequirementPage/>}/>
                         </Routes>
