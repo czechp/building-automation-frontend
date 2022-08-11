@@ -11,7 +11,7 @@ const TopBarLayout = () => {
             <LogoContainer>
                 <FontAwesomeIcon icon={faHouseSignal} size={"3x"}/>
                 <Logo>
-                    <LogoHeader>PCz</LogoHeader>
+                    <LogoHeader>PCzech</LogoHeader>
                     <LogoSubheader>Building <br/>Automation</LogoSubheader>
                 </Logo>
             </LogoContainer>
