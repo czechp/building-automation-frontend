@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {Table, Tbody, Td, Th, Thead, Tr} from "../../../../configuration/styledComponents/Table";
-import switchDeviceStateConverter from "../converter/switchDeviceStateConverter";
+import switchDeviceStateConverter from "../../converter/switchDeviceStateConverter";
 import InfoFrame from "../../../../configuration/styledComponents/InfoFrame";
 import colors from "../../../../configuration/style/colors";
 import ColorExplanationCmp from "../../../../component/ColorExplanationCmp";

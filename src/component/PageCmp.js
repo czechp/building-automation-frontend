@@ -32,7 +32,7 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 1300px;
+  width: 80%;
 `
 
 
