@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import {Table, Tbody, Td, Th, Thead, Tr} from "../../../../configuration/styledComponents/Table";
 import switchDeviceStateConverter from "../converter/switchDeviceStateConverter";
-import DateConverter from "../../../../service/converter/dateConverter";
 import InfoFrame from "../../../../configuration/styledComponents/InfoFrame";
 import colors from "../../../../configuration/style/colors";
 import ColorExplanationCmp from "../../../../component/ColorExplanationCmp";
+import {useNavigate} from "react-router-dom";
 
 const SwitchDevicesListCmp = ({switchDevices, setSortingField}) => {
 
@@ -37,7 +37,7 @@ const SwitchDevicesListCmp = ({switchDevices, setSortingField}) => {
 }
 
 const SwitchDeviceRow = ({switchDevice}) => {
-    const dateConverter = new DateConverter();
+    const navigate = useNavigate();
 
     function determineStateColor() {
         if (switchDevice.deviceError)
@@ -48,7 +48,11 @@ const SwitchDeviceRow = ({switchDevice}) => {
             return colors.off;
     }
 
-    return <TrDevice state={determineStateColor()}>
+    function trOnClick() {
+        navigate("/switch-device-details", {state: switchDevice.id});
+    }
+
+    return <TrDevice onClick={trOnClick} state={determineStateColor()}>
         <Td>{switchDevice.id}</Td>
         <Td>{switchDevice.name}</Td>
         <Td>{switchDevice.location.name}</Td>
