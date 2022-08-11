@@ -5,6 +5,7 @@ import GetRequestService from "../../../service/http/getRequestService";
 import SwitchDeviceInfoCmp from "./component/SwitchDeviceInfoCmp";
 import SwitchDeviceRemoveCmp from "./component/SwitchDeviceRemoveCmp";
 import SwitchDeviceErrorInfo from "./component/SwitchDeviceErrorInfo";
+import SwitchDeviceSetStateCmp from "./component/SwitchDeviceSetStateCmp";
 
 const SwitchDeviceDetailsPage = () => {
     const SWITCH_DEVICE_ENDPOINT = "/api/switch-devices";
@@ -18,6 +19,7 @@ const SwitchDeviceDetailsPage = () => {
     return <PageCmp title="Switch device details" loaded={switchDevice}>
         {switchDevice && <>
             <SwitchDeviceErrorInfo error={switchDevice.deviceError}/>
+            <SwitchDeviceSetStateCmp switchDevice={switchDevice} reloadRequest={reloadRequest} />
             <SwitchDeviceInfoCmp switchDevice={switchDevice}/>
             <SwitchDeviceRemoveCmp switchDeviceId={switchDevice.id} />
         </>}
