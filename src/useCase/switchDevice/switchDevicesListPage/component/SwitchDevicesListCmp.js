@@ -32,7 +32,7 @@ const SwitchDevicesListCmp = ({switchDevices, setSortingField}) => {
                                                                        switchDevice={device}/>)}
             </Tbody>
         </Table>
-        {switchDevices.length === 0 && <InfoFrame>Currently you have no locations. <br/> Add a new.</InfoFrame>}
+        {switchDevices.length === 0 && <InfoFrame>Currently you have no switch devices. <br/> Add a new.</InfoFrame>}
     </Container>
 }
 
