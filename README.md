@@ -62,3 +62,9 @@
 - [x] remove switch device ("/switch-device-details"),
 - [x] set new state for device ("/switch-device-details"),
 - [x] list of switch device in location details,
+
+### Events
+- [ ] event list page "/events",
+- [ ] tile in home page to events,
+- [ ] event details,
+- [ ] event list by device,
