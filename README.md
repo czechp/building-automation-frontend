@@ -64,7 +64,7 @@
 - [x] list of switch device in location details,
 
 ### Events
-- [ ] event list page "/events",
-- [ ] tile in home page to events,
+- [x] event list page "/events",
+- [x] tile in home page to events,
 - [ ] event details,
-- [ ] event list by device,
+- [ ] event list in switch device,
