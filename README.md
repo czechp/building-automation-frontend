@@ -60,5 +60,5 @@
 - [x] switch device details ("/switch-device-details"),
 - [x] error statement ("/switch-device-details"),
 - [x] remove switch device ("/switch-device-details"),
-- [ ] set new state for device ("/switch-device-details"),
-- [ ] list of switch device in location details,
+- [x] set new state for device ("/switch-device-details"),
+- [x] list of switch device in location details,
