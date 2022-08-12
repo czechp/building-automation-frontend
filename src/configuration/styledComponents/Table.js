@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const Table = styled.table`
   width: 100%;
   padding: 20px;
+  border-collapse: collapse;
+  margin-bottom: 20px;
 `;
 export const Tr = styled.tr`
     &:hover{

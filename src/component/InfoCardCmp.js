@@ -21,6 +21,7 @@ const Container = styled.div`
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 50px;
+  box-sizing: border-box;
 `;
 
 const RowContainer = styled.div`

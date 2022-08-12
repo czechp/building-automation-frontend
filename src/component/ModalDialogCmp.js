@@ -55,7 +55,7 @@ const Container = styled.div`
 
 const ModalDialog = styled.div`
   background-color: ${({theme}) => theme.colors.background};
-  margin-top: 100px;
+  margin-top: 20px;
   width: 50%;
   display: flex;
   flex-direction: column;

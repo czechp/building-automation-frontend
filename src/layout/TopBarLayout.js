@@ -11,7 +11,7 @@ const TopBarLayout = () => {
             <LogoContainer>
                 <FontAwesomeIcon icon={faHouseSignal} size={"3x"}/>
                 <Logo>
-                    <LogoHeader>PCz</LogoHeader>
+                    <LogoHeader>PCzech</LogoHeader>
                     <LogoSubheader>Building <br/>Automation</LogoSubheader>
                 </Logo>
             </LogoContainer>
@@ -26,7 +26,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 150px;
+  height: 10vh;
 
 `
 

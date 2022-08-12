@@ -8,6 +8,7 @@ const  colors = {
     faded: "white",
     black: "black",
     white: "white",
+    off: "#778899",
     background: "#eae5e5"
 }
 
