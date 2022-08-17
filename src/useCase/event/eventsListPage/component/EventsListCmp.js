@@ -4,6 +4,7 @@ import eventTypeConverter from "../../converter/eventTypeConverter";
 import DateConverter from "../../../../service/converter/dateConverter";
 import ColorExplanationCmp from "../../../../component/ColorExplanationCmp";
 import colors from "../../../../configuration/style/colors";
+import {useNavigate} from "react-router-dom";
 
 const EventsListCmp = ({events, setSortingField}) => {
     const colorExplanation = [
@@ -30,9 +31,13 @@ const EventsListCmp = ({events, setSortingField}) => {
 
 const EventRowCmp = ({event}) => {
     const dateConverter = new DateConverter();
+    const navigate = useNavigate();
     const stateColor = event.failed ? colors.danger : colors.success;
 
-    return <TrEvent state={stateColor}>
+    function eventRowOnClick(){
+        navigate("/event-details", {state: event.id});
+    }
+    return <TrEvent state={stateColor} onClick={eventRowOnClick}>
         <Td>{event.id}</Td>
         <Td>{eventTypeConverter(event.deviceEvent)}</Td>
         <Td>{dateConverter.toFullDateTime(event.creationTimestamp)}</Td>
