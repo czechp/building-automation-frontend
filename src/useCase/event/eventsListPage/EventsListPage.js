@@ -2,7 +2,7 @@ import PageCmp from "../../../component/PageCmp";
 import GetRequestService from "../../../service/http/getRequestService";
 import EventsListCmp from "./component/EventsListCmp";
 
-const EventListPage = () => {
+const EventsListPage = () => {
     const EVENTS_ENDPOINT = "/api/device-events/account";
     const getRequestService = new GetRequestService();
     const {objects: events, setSortingField, reloadRequest} = getRequestService.getObjectsArray(EVENTS_ENDPOINT);
@@ -14,4 +14,4 @@ const EventListPage = () => {
     </PageCmp>
 }
 
-export default EventListPage;
+export default EventsListPage;
