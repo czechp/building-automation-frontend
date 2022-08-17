@@ -24,6 +24,7 @@ import SwitchDevicesListPage from "./useCase/switchDevice/switchDevicesListPage/
 import HomePage from "./useCase/home/HomePage";
 import SwitchDeviceDetailsPage from "./useCase/switchDevice/switchDeviceDetailsPage/SwitchDeviceDetailsPage";
 import EventListPage from "./useCase/event/eventsListPage/EventListPage";
+import EventDetailsPage from "./useCase/event/eventDetailsPage/EventDetailsPage";
 
 export const StatementContext = createStatementContext();
 
@@ -54,7 +55,8 @@ function App() {
                             <Route path="/switch-devices" element={<LoginGuard><SwitchDevicesListPage/></LoginGuard>}/>
                             <Route path="/switch-device-details"
                                    element={<LoginGuard><SwitchDeviceDetailsPage/></LoginGuard>}/>
-                            <Route path="/events" element={<LoginGuard><EventListPage/></LoginGuard>} />
+                            <Route path="/events" element={<LoginGuard><EventListPage/></LoginGuard>}/>
+                            <Route path="/event-details" element={<LoginGuard><EventDetailsPage/></LoginGuard>} />
                             <Route path="/not-logged" element={<LoginRequirementPage/>}/>
                             <Route path="/admin-access" element={<AdminRequirementPage/>}/>
                         </Routes>
