@@ -46,7 +46,6 @@
 - [x] account details page,
 - [x] delete account,
 - [x] confirm by admin,
-- [ ] restore password
 
 ### Locations
 
@@ -66,5 +65,6 @@
 ### Events
 - [x] event list page "/events",
 - [x] tile in home page to events,
-- [ ] event details,
-- [ ] event list in switch device,
+- [x] event details,
+- [x] event list in switch device,
+- [ ] events for admin (possibility to remove event)
