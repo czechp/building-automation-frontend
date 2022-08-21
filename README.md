@@ -46,7 +46,6 @@
 - [x] account details page,
 - [x] delete account,
 - [x] confirm by admin,
-- [ ] restore password
 
 ### Locations
 
@@ -62,3 +61,10 @@
 - [x] remove switch device ("/switch-device-details"),
 - [x] set new state for device ("/switch-device-details"),
 - [x] list of switch device in location details,
+
+### Events
+- [x] event list page "/events",
+- [x] tile in home page to events,
+- [x] event details,
+- [x] event list in switch device,
+- [ ] events for admin (possibility to remove event)

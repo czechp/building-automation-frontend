@@ -6,6 +6,7 @@ import SwitchDeviceInfoCmp from "./component/SwitchDeviceInfoCmp";
 import SwitchDeviceRemoveCmp from "./component/SwitchDeviceRemoveCmp";
 import SwitchDeviceErrorInfo from "./component/SwitchDeviceErrorInfo";
 import SwitchDeviceSetStateCmp from "./component/SwitchDeviceSetStateCmp";
+import SwitchDeviceEventsCmp from "./component/SwitchDeviceEventsCmp";
 
 const SwitchDeviceDetailsPage = () => {
     const SWITCH_DEVICE_ENDPOINT = "/api/switch-devices";
@@ -21,7 +22,8 @@ const SwitchDeviceDetailsPage = () => {
             <SwitchDeviceErrorInfo error={switchDevice.deviceError}/>
             <SwitchDeviceSetStateCmp switchDevice={switchDevice} reloadRequest={reloadRequest} />
             <SwitchDeviceInfoCmp switchDevice={switchDevice}/>
-            <SwitchDeviceRemoveCmp switchDeviceId={switchDevice.id} />
+            <SwitchDeviceEventsCmp switchDeviceId={switchDevice.id}/>
+            <SwitchDeviceRemoveCmp switchDeviceId={switchDevice.id}/>
         </>}
     </PageCmp>;
 }
