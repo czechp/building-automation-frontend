@@ -7,14 +7,16 @@ import {FieldsValidator} from "../../../../service/validator/fieldsValidator";
 import {StatementContext} from "../../../../App";
 import SendRequestService from "../../../../service/http/sendRequestService";
 import httpErrorHandler from "../../../../service/http/httpErrorHandler";
+import {useNavigate} from "react-router-dom";
 
 const RestorePasswordEmailFormCmp = () => {
     const {showErrorInfo, showSuccessInfo} = React.useContext(StatementContext);
     const [userEmail, setUserEmail] = React.useState("");
+    const navigate = useNavigate();
 
     function tokenSent(response) {
         showSuccessInfo(`Token was sent for ${userEmail}`);
-        //TODO: navigate to password restore token confirmed page
+        navigate("/restore-password-token", {state: response.data})
     }
 
     function requestErrorHandler(error){

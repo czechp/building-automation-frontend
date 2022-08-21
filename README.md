@@ -70,6 +70,6 @@
 - [x] events for admin (possibility to remove event)
 
 ### Restore password
-- [ ] restore password demand page ("/restore-password-demand"),
-- [ ] apply restore password token ("/restore-password-token"),
-- [ ] navigate to restore password demand page from login page,
+- [x] restore password demand page ("/restore-password-demand"),
+- [x] apply restore password token ("/restore-password-token"),
+- [x] navigate to restore password demand page from login page,
