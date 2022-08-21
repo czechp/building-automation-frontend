@@ -26,6 +26,8 @@ import SwitchDeviceDetailsPage from "./useCase/switchDevice/switchDeviceDetailsP
 import EventsListPage from "./useCase/event/eventsListPage/EventsListPage";
 import EventDetailsPage from "./useCase/event/eventsDetailsPage/EventDetailsPage";
 import RestorePasswordDemandPage from "./useCase/account/restorePasswordDemandPage/RestorePasswordDemandPage";
+import RestorePasswordApplyTokenPage
+    from "./useCase/account/restorePasswordApplyTokenPage/RestorePasswordApplyTokenPage";
 
 export const StatementContext = createStatementContext();
 
@@ -51,6 +53,7 @@ function App() {
                             <Route path="/login" element={<LoginPage/>}/>
                             <Route path="/register" element={<RegisterPage/>}/>
                             <Route path="/restore-password-demand" element={<RestorePasswordDemandPage />} />
+                            <Route path="/restore-password-token" element={<RestorePasswordApplyTokenPage />} />
                             <Route path="/activate-account" element={<ActivateAccountPage/>}/>
                             <Route path="/accounts" element={<AdminGuard><AccountsListPage/></AdminGuard>}/>
                             <Route path="/account-details" element={<AdminGuard><AccountDetailsPage/></AdminGuard>}/>
