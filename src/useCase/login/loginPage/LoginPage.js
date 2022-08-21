@@ -1,6 +1,6 @@
 import React from "react";
 import {useNavigate} from "react-router-dom";
-
+import styled from "styled-components";
 
 import PageCmp from "../../../component/PageCmp";
 import FormCmp from "../../../component/FormCmp";
@@ -62,11 +62,19 @@ const LoginPage = () => {
             <TextInputCmp type="password" placeholder="Type your password" label="Password:" value={password}
                           onChange={setPassword} minLength={3}/>
             <ButtonCmp label="Sign in" onClick={loginBtnOnClick}/>
+            <RestorePasswordInfo>If do not remember password <RestorePasswordLink href="/restore-password-demand">restore it</RestorePasswordLink> .</RestorePasswordInfo>
             <ButtonCmp label="Register" onClick={registerBtnOnClick}/>
             <ButtonCmp label="Activate account" onClick={activateAccountBtnClick}/>
         </FormCmp>
     </PageCmp>
 }
 
+const RestorePasswordInfo = styled.p`
+  margin-top: 0;
+  font-size: smaller;
+  font-style: italic;
+`;
+
+const RestorePasswordLink = styled.a``;
 
 export default LoginPage;

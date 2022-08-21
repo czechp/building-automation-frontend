@@ -67,4 +67,9 @@
 - [x] tile in home page to events,
 - [x] event details,
 - [x] event list in switch device,
-- [ ] events for admin (possibility to remove event)
+- [x] events for admin (possibility to remove event)
+
+### Restore password
+- [x] restore password demand page ("/restore-password-demand"),
+- [x] apply restore password token ("/restore-password-token"),
+- [x] navigate to restore password demand page from login page,
