@@ -37,10 +37,10 @@ function App() {
 
     return (<div className="App">
         <ThemeProvider theme={theme}>
+            <GlobalStyles/>
 
             <StatementContext.Provider value={statementContextValue}>
                 <BrowserRouter>
-                    <GlobalStyles/>
                     <ContainerLayout>
                         <StickyTopContainer>
                             <TopBarLayout/>
